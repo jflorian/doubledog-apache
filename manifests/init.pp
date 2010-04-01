@@ -8,6 +8,14 @@ class apache {
         ensure  => installed,
     }
 
+    file { "/etc/httpd/conf/httpd.conf":
+        content	=> template("apache/httpd.conf"),
+        group   => "root",
+        mode    => 640,
+        owner   => "root",
+        require => Package["httpd"],
+    }
+
     file { "/etc/httpd/conf.d/doubledog.conf":
         group   => "root",
         mode    => 640,
