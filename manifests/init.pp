@@ -8,6 +8,10 @@ class apache {
         ensure  => installed,
     }
 
+    package { "mod_ssl":
+        ensure  => installed,
+    }
+
     file { "/etc/httpd/conf/httpd.conf":
         content	=> template("apache/httpd.conf"),
         group   => "root",
@@ -75,6 +79,7 @@ class apache {
             Exec["open-http-port"],
             Exec["open-https-port"],
             Package["httpd"],
+            Package["mod_ssl"],
         ],
         subscribe       => [
             File["/etc/httpd/conf.d/doubledog.conf"],
