@@ -1,0 +1,62 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 10 (0xa)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, ST=Michigan, L=Mason, O=doubledog.org, OU=Security, CN=doubledog.org/emailAddress=jflorian@doubledog.org
+        Validity
+            Not Before: Apr  1 21:47:51 2010 GMT
+            Not After : Mar 29 21:47:51 2020 GMT
+        Subject: C=US, ST=Michigan, O=doubledog.org, OU=Web Services, CN=hector.doubledog.org/emailAddress=jflorian@doubledog.org
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:bb:e4:98:6b:0b:f2:20:3a:68:70:c6:6d:5f:65:
+                    47:4c:6f:d8:1b:e7:a6:41:b6:78:81:cc:52:c7:ff:
+                    e5:c4:4b:b0:2f:0e:ab:9c:17:20:f2:38:4d:12:2d:
+                    b6:6a:53:08:44:7c:3d:fa:73:ba:1e:7d:ed:18:1b:
+                    f9:68:52:41:54:89:5f:46:eb:f3:73:58:3d:bd:f8:
+                    23:0b:15:08:04:fd:82:4d:77:13:18:d2:96:81:fb:
+                    2b:5d:b0:5c:cd:c5:88:89:2a:f2:75:a3:d0:32:e1:
+                    51:4e:fa:fb:9a:4a:17:a4:6d:ba:fe:5e:e9:7a:04:
+                    ce:f6:0f:07:39:32:a3:38:45
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                90:DA:2E:5E:AA:21:CE:EE:19:B9:02:62:F6:88:75:00:7B:6E:59:B9
+            X509v3 Authority Key Identifier: 
+                keyid:0B:AA:44:C8:DA:E4:E7:94:A0:99:B4:EF:AF:AE:2B:EE:71:41:AF:77
+
+    Signature Algorithm: sha1WithRSAEncryption
+        45:7b:8f:6c:c2:ca:18:a7:50:c9:ad:a1:9a:db:32:8b:59:2d:
+        88:a9:cf:fc:24:16:93:51:12:65:0f:f2:5f:c0:33:d4:50:96:
+        83:7e:a4:31:80:82:0b:aa:0d:a1:de:38:69:37:fc:0c:bd:43:
+        7d:d9:e3:21:c0:d7:c7:f1:af:cd:f8:04:ee:2b:44:f0:10:60:
+        e8:bc:15:64:66:33:b2:71:ec:14:3f:a4:8e:58:01:7f:54:b8:
+        58:70:59:77:ad:05:b9:33:00:90:b4:78:03:4f:d4:02:95:41:
+        4a:61:e6:25:a0:5d:ef:6a:ad:e5:84:73:c1:48:30:73:3b:7a:
+        f8:53
+-----BEGIN CERTIFICATE-----
+MIIDIjCCAougAwIBAgIBCjANBgkqhkiG9w0BAQUFADCBmjELMAkGA1UEBhMCVVMx
+ETAPBgNVBAgTCE1pY2hpZ2FuMQ4wDAYDVQQHEwVNYXNvbjEWMBQGA1UEChMNZG91
+YmxlZG9nLm9yZzERMA8GA1UECxMIU2VjdXJpdHkxFjAUBgNVBAMTDWRvdWJsZWRv
+Zy5vcmcxJTAjBgkqhkiG9w0BCQEWFmpmbG9yaWFuQGRvdWJsZWRvZy5vcmcwHhcN
+MTAwNDAxMjE0NzUxWhcNMjAwMzI5MjE0NzUxWjCBlTELMAkGA1UEBhMCVVMxETAP
+BgNVBAgTCE1pY2hpZ2FuMRYwFAYDVQQKEw1kb3VibGVkb2cub3JnMRUwEwYDVQQL
+EwxXZWIgU2VydmljZXMxHTAbBgNVBAMTFGhlY3Rvci5kb3VibGVkb2cub3JnMSUw
+IwYJKoZIhvcNAQkBFhZqZmxvcmlhbkBkb3VibGVkb2cub3JnMIGfMA0GCSqGSIb3
+DQEBAQUAA4GNADCBiQKBgQC75JhrC/IgOmhwxm1fZUdMb9gb56ZBtniBzFLH/+XE
+S7AvDqucFyDyOE0SLbZqUwhEfD36c7oefe0YG/loUkFUiV9G6/NzWD29+CMLFQgE
+/YJNdxMY0paB+ytdsFzNxYiJKvJ1o9Ay4VFO+vuaShekbbr+Xul6BM72Dwc5MqM4
+RQIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdl
+bmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQUkNouXqohzu4ZuQJi9oh1AHtu
+WbkwHwYDVR0jBBgwFoAUC6pEyNrk55SgmbTvr64r7nFBr3cwDQYJKoZIhvcNAQEF
+BQADgYEARXuPbMLKGKdQya2hmtsyi1ktiKnP/CQWk1ESZQ/yX8Az1FCWg36kMYCC
+C6oNod44aTf8DL1DfdnjIcDXx/GvzfgE7itE8BBg6LwVZGYzsnHsFD+kjlgBf1S4
+WHBZd60FuTMAkLR4A0/UApVBSmHmJaBd72qt5YRzwUgwczt6+FM=
+-----END CERTIFICATE-----
