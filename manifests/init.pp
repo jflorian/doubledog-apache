@@ -28,12 +28,12 @@ class apache {
         source  => "puppet:///modules/apache/doubledog.conf",
     }
 
-    file { "/etc/httpd/conf.d/doubledog-ssl.conf":
+    file { "/etc/httpd/conf.d/ssl.conf":
         group   => "root",
         mode    => 640,
         owner   => "root",
         require => Package["httpd"],
-        source  => "puppet:///modules/apache/doubledog-ssl.conf",
+        source  => "puppet:///modules/apache/ssl.conf",
     }
 
     file { "/etc/pki/tls/private/doubledog-httpd.key":
@@ -83,7 +83,7 @@ class apache {
         ],
         subscribe       => [
             File["/etc/httpd/conf.d/doubledog.conf"],
-            File["/etc/httpd/conf.d/doubledog-ssl.conf"],
+            File["/etc/httpd/conf.d/ssl.conf"],
             File["/etc/pki/tls/private/doubledog-httpd.key"],
             File["/etc/pki/tls/certs/doubledog-httpd.crt"],
         ],
