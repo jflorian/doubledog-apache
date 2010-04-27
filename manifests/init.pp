@@ -36,20 +36,10 @@ class apache {
         source  => "puppet:///modules/apache/ssl.conf",
     }
 
-    file { "/etc/pki/tls/private/doubledog-httpd.key":
-        group   => "root",
-        mode    => 600,
-        owner   => "root",
-        require => Package["openssl"],
-        source  => "puppet:///modules/apache/doubledog-httpd.key",
-    }
-
-    file { "/etc/pki/tls/certs/doubledog-httpd.crt":
-        group   => "root",
-        mode    => 600,
-        owner   => "root",
-        require => Package["openssl"],
-        source  => "puppet:///modules/apache/doubledog-httpd.crt",
+    openssl::tls-certificate { "doubledog-hector-https":
+        cert_source     => "puppet:///private-host/doubledog-hector-http.crt",
+        key_source      => "puppet:///private-host/doubledog-hector-http.key",
+        notify          => Service["httpd"],
     }
 
     # Web content is reached via NFS, so selinux must be adjusted to allow the
@@ -84,8 +74,6 @@ class apache {
         subscribe       => [
             File["/etc/httpd/conf.d/doubledog.conf"],
             File["/etc/httpd/conf.d/ssl.conf"],
-            File["/etc/pki/tls/private/doubledog-httpd.key"],
-            File["/etc/pki/tls/certs/doubledog-httpd.crt"],
         ],
     }
 
