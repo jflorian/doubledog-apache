@@ -8,10 +8,6 @@ class apache {
         ensure  => installed,
     }
 
-    package { "mod_ssl":
-        ensure  => installed,
-    }
-
     file { "/etc/httpd/conf/httpd.conf":
         content	=> template("apache/httpd.conf"),
         group   => "root",
@@ -31,11 +27,6 @@ class apache {
         unless  => "grep -q -- '-A INPUT .* -p tcp --dport 80 -j ACCEPT' /etc/sysconfig/iptables",
     }
 
-    exec { "open-https-port":
-        command => "lokkit --port=443:tcp",
-        unless  => "grep -q -- '-A INPUT .* -p tcp --dport 443 -j ACCEPT' /etc/sysconfig/iptables",
-    }
-
     service { "httpd":
         enable          => true,
         ensure          => running,
@@ -44,9 +35,7 @@ class apache {
         require         => [
             Exec["allow-httpd-use-nfs"],
             Exec["open-http-port"],
-            Exec["open-https-port"],
             Package["httpd"],
-            Package["mod_ssl"],
         ],
         subscribe       => [
             File["/etc/httpd/conf/httpd.conf"],
