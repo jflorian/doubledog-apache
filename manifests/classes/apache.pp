@@ -11,7 +11,7 @@ class apache {
     file { "/etc/httpd/conf/httpd.conf":
         content	=> template("apache/httpd.conf"),
         group   => "root",
-        mode    => 640,
+        mode    => "0640",
         owner   => "root",
         require => Package["httpd"],
     }
