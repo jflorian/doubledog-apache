@@ -34,7 +34,9 @@ define apache::bind-mount ($ensure="mounted", $source) {
         replace => false,
         seluser => "system_u",
         selrole => "object_r",
-        seltype => "httpd_sys_content_t",
+# Disabling seltype for now since the value doesn't stick at all.
+# TODO: revisit this once SELinux is available on NFS server.
+#       seltype => "httpd_sys_content_t",
         require => Package["httpd"],
     }
 
@@ -44,7 +46,7 @@ define apache::bind-mount ($ensure="mounted", $source) {
         device  => $source,
         ensure  => $ensure,
         fstype  => "none",
-        options => "bind,_netdev",
+        options => "bind,_netdev,context=system_u:object_r:httpd_sys_content_t",
         require => File["/var/www/${name}"],
     }
 
