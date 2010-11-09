@@ -9,7 +9,7 @@ class apache {
     }
 
     file { "/etc/httpd/conf/httpd.conf":
-        content	=> template("apache/httpd.conf"),
+        content	=> template("apache/httpd.conf.${operatingsystem}.${operatingsystemrelease}"),
         group   => "root",
         mode    => "0640",
         owner   => "root",
