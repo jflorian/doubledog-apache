@@ -2,6 +2,7 @@
 
 class apache {
 
+    include lokkit
     include openssl
 
     package { "httpd":
@@ -22,9 +23,8 @@ class apache {
         value           => on,
     }
 
-    exec { "open-http-port":
-        command => "lokkit --port=80:tcp",
-        unless  => "grep -q -- '-A INPUT .* -p tcp --dport 80 -j ACCEPT' /etc/sysconfig/iptables",
+    lokkit::tcp_port { "http":
+        port    => "80",
     }
 
     service { "httpd":
@@ -33,7 +33,7 @@ class apache {
         hasrestart      => true,
         hasstatus       => true,
         require         => [
-            Exec["open-http-port"],
+            Exec["open-http-tcp-port"],
             Package["httpd"],
             Selboolean["httpd_use_nfs"],
         ],

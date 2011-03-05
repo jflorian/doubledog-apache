@@ -9,13 +9,14 @@
 
 class apache::mod_ssl {
 
+    include lokkit
+
     package { "mod_ssl":
         ensure  => installed,
     }
 
-    exec { "open-https-port":
-        command => "lokkit --port=443:tcp",
-        unless  => "grep -q -- '-A INPUT .* -p tcp --dport 443 -j ACCEPT' /etc/sysconfig/iptables",
+    lokkit::tcp_port { "https":
+        port    => "443",
     }
 
 }
