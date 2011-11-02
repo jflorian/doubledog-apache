@@ -1,4 +1,4 @@
-# /etc/puppet/modules/apache/manifests/definitions/misc-config.pp
+# modules/apache/manifests/definitions/misc-config.pp
 #
 # Synopsis:
 #       Installs a miscellaneous configuration file for the Apache web server.

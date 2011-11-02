@@ -1,4 +1,4 @@
-# /etc/puppet/modules/apache/manifests/init.pp
+# modules/apache/manifests/init.pp
 
 class apache {
 

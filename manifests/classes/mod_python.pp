@@ -1,4 +1,4 @@
-# /etc/puppet/modules/apache/manifests/classes/mod_python.pp
+# modules/apache/manifests/classes/mod_python.pp
 
 # Synopsis:
 #       Include this class in addition to the apache class, if mod_python is needed.
