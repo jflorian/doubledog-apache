@@ -21,7 +21,7 @@ class apache {
 
     # Web content is reached via NFS, so selinux must be adjusted to allow the
     # apache daemon to access it.
-    selboolean { 'httpd_use_nfs':
+    selinux::boolean { 'httpd_use_nfs':
         persistent      => true,
         value           => on,
     }
