@@ -1,4 +1,4 @@
-# modules/apache/manifests/classes/mod_ssl.pp
+# modules/apache/manifests/mod_ssl.pp
 
 # Synopsis:
 #       Include this class in addition to the apache class, if mod_ssl is needed.
