@@ -9,8 +9,6 @@
 
 class apache::mod_ssl {
 
-    include lokkit
-
     package { "mod_ssl":
         ensure  => installed,
     }

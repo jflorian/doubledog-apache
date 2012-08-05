@@ -2,7 +2,6 @@
 
 class apache {
 
-    include lokkit
     include openssl
 
     package { 'httpd':
