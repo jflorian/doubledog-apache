@@ -36,7 +36,6 @@ class apache {
         hasrestart      => true,
         hasstatus       => true,
         require         => [
-            Exec['open-http-tcp-port'],
             Package['httpd'],
             Selboolean['httpd_use_nfs'],
         ],
