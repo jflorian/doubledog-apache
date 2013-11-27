@@ -12,7 +12,7 @@
 #
 # Example usage:
 #
-#       include apache
+#       include 'apache'
 #
 #       apache::misc-config { "dav_auth":
 #           notify  => Service["apache"],

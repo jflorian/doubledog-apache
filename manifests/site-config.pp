@@ -12,7 +12,7 @@ Requires:
 
 Example usage:
 
-    include apache
+    include 'apache'
 
     apache::site-config { "acme":
         notify  => Service["httpd"],

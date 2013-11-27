@@ -2,7 +2,7 @@
 
 class apache {
 
-    include openssl
+    include 'openssl'
 
     package { 'httpd':
         ensure  => installed,

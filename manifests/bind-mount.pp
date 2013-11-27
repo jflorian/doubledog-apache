@@ -13,7 +13,7 @@ Requires:
 
 Example usage:
 
-    include apache
+    include 'apache'
 
     apache::bind-mount { "html":
         source  => "/mnt/resources/www/html/",
