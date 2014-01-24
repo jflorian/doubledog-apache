@@ -18,6 +18,9 @@ class apache::params {
             $packages = [
                 'httpd',
             ]
+            $modpassenger_packages = [
+                'mod_passenger',
+            ]
             $modssl_packages = [
                 'mod_ssl',
             ]
