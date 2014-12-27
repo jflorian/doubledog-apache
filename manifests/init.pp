@@ -22,14 +22,21 @@
 #   Configure SE Linux to allow the serving content reached via NFS.  One of:
 #   true or false (default).
 #
+# [*manage_firewall*]
+#   If true, open the HTTP port on the firewall.  Otherwise the firewall is
+#   left unaffected.  Defaults to true.
+#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
 
 
 class apache (
-        $anon_write=false, $network_connect=false, $network_connect_db=false,
-        $use_nfs=false
+        $anon_write=false,
+        $network_connect=false,
+        $network_connect_db=false,
+        $use_nfs=false,
+        $manage_firewall=true,
     ) {
 
     include 'apache::params'
@@ -55,8 +62,13 @@ class apache (
         content	=> template("apache/httpd.conf.${operatingsystem}.${operatingsystemrelease}"),
     }
 
-    iptables::tcp_port {
-        'http': port => '80';
+    if $manage_firewall {
+        firewall { '500 accept HTTP packets':
+            dport  => '80',
+            proto  => 'tcp',
+            state  => 'NEW',
+            action => 'accept',
+        }
     }
 
     Selinux::Boolean {

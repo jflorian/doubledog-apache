@@ -6,22 +6,31 @@
 #
 # === Parameters
 #
-# NONE
+# [*manage_firewall*]
+#   If true, open the HTTPS port on the firewall.  Otherwise the firewall is
+#   left unaffected.  Defaults to true.
 #
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
 
 
-class apache::mod_ssl {
+class apache::mod_ssl (
+        $manage_firewall=true,
+    ) {
 
     package { $apache::params::modssl_packages:
         ensure  => installed,
         notify  => Service[$apache::params::services],
     }
 
-    iptables::tcp_port {
-        'https':    port => '443';
+    if $manage_firewall {
+        firewall { '500 accept HTTPS packets':
+            dport  => '443',
+            proto  => 'tcp',
+            state  => 'NEW',
+            action => 'accept',
+        }
     }
 
 }
