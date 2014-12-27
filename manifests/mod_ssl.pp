@@ -20,8 +20,8 @@ class apache::mod_ssl (
     ) {
 
     package { $apache::params::modssl_packages:
-        ensure  => installed,
-        notify  => Service[$apache::params::services],
+        ensure => installed,
+        notify => Service[$apache::params::services],
     }
 
     if $manage_firewall {

@@ -42,8 +42,8 @@ class apache (
     include 'apache::params'
 
     package { $apache::params::packages:
-        ensure  => installed,
-        notify  => Service[$apache::params::services],
+        ensure => installed,
+        notify => Service[$apache::params::services],
     }
 
     File {
@@ -59,7 +59,7 @@ class apache (
     }
 
     file { '/etc/httpd/conf/httpd.conf':
-        content	=> template("apache/httpd.conf.${operatingsystem}.${operatingsystemrelease}"),
+        content  => template("apache/httpd.conf.${::operatingsystem}.${::operatingsystemrelease}"),
     }
 
     if $manage_firewall {
@@ -100,10 +100,10 @@ class apache (
     }
 
     service { $apache::params::services:
-        enable      => true,
-        ensure      => running,
-        hasrestart  => true,
-        hasstatus   => true,
+        ensure     => running,
+        enable     => true,
+        hasrestart => true,
+        hasstatus  => true,
     }
 
 }

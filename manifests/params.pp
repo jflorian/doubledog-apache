@@ -41,7 +41,7 @@ class apache::params {
         }
 
         default: {
-            fail ("The apache module is not yet supported on $::operatingsystem.")
+            fail ("The apache module is not yet supported on ${::operatingsystem}.")
         }
 
     }
