@@ -78,25 +78,16 @@ class apache (
 
     selinux::boolean {
         $apache::params::bool_anon_write:
-            value       => $anon_write ? {
-                true    => 'on',
-                default => 'off',
-            };
+            value => $anon_write;
+
         $apache::params::bool_can_network_connect:
-            value       => $network_connect ? {
-                true    => 'on',
-                default => 'off',
-            };
+            value => $network_connect;
+
         $apache::params::bool_can_network_connect_db:
-            value       => $network_connect_db ? {
-                true    => 'on',
-                default => 'off',
-            };
+            value => $network_connect_db;
+
         $apache::params::bool_use_nfs:
-            value       => $use_nfs ? {
-                true    => 'on',
-                default => 'off',
-            };
+            value => $use_nfs;
     }
 
     service { $apache::params::services:
