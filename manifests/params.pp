@@ -13,7 +13,7 @@ class apache::params {
 
     case $::operatingsystem {
 
-        Fedora: {
+        'Fedora': {
 
             $packages = [
                 'httpd',
@@ -28,7 +28,7 @@ class apache::params {
                 'httpd',
             ]
 
-            if $::operatingsystemrelease < 18 {
+            if $::operatingsystemrelease < '18' {
                 $bool_anon_write = 'allow_httpd_anon_write'
             } else {
                 $bool_anon_write = 'httpd_anon_write'
