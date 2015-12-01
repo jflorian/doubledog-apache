@@ -47,10 +47,7 @@ class apache (
         $manage_firewall=true,
     ) inherits ::apache::params {
 
-    package { $::apache::params::packages:
-        ensure => installed,
-        notify => Service[$::apache::params::services],
-    }
+    include '::apache::package'
 
     File {
         owner     => 'root',
