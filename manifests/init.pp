@@ -48,6 +48,7 @@ class apache (
     ) inherits ::apache::params {
 
     include '::apache::package'
+    include '::apache::service'
 
     File {
         owner     => 'root',
@@ -91,13 +92,6 @@ class apache (
 
         $::apache::params::bool_use_nfs:
             value => $use_nfs;
-    }
-
-    service { $::apache::params::services:
-        ensure     => running,
-        enable     => true,
-        hasrestart => true,
-        hasstatus  => true,
     }
 
 }
