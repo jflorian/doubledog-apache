@@ -2,38 +2,54 @@
 #
 # == Define: apache::module_config
 #
-# Installs a module configuration file for the Apache HTTP server.
+# Manages a module configuration file for the Apache HTTP server.
 #
 # === Parameters
 #
+# ==== Required
+#
 # [*namevar*]
-#   Instance name, e.g., "99-prefork".  Include neither path, nor '.conf'
-#   extension.  These typically have a two-digit prefix for priority
-#   sequencing.
+#   An arbitrary identifier for the configuration file instance unless the
+#   "filename" parameter is not set in which case this must provide the value
+#   normally set with the "filename" parameter.
+#
+# ==== Optional
 #
 # [*ensure*]
 #   Instance is to be 'present' (default) or 'absent'.
 #
+# [*filename*]
+#   Name to be given to the configuration file, without any path details nor
+#   ".conf" suffix.  E.g., "99-prefork".  This may be used in place of
+#   "namevar" if it's beneficial to give namevar an arbitrary value.
+#
 # [*content*]
-#   Literal content for the module_config file.  One and only one of "content"
-#   or "source" must be given.
+#   Literal content for the configuration file.  If neither "content" nor
+#   "source" is given, the content of the file will be left unmanaged.
 #
 # [*source*]
-#   URI of the module_config file content.  One and only one of "content" or
-#   "source" must be given.
+#   URI of the configuration file content.  If neither "content" nor "source"
+#   is given, the content of the file will be left unmanaged.
 #
 # === Authors
 #
-#   John Florian <john.florian@dart.biz>
+#   John Florian <jflorian@doubledog.org>
+#
+# === Copyright
+#
+# Copyright 2014-2015 John Florian
 
 
 define apache::module_config (
-        $ensure='present', $source=undef, $content=undef
+        $ensure='present',
+        $filename=$title,
+        $source=undef,
+        $content=undef,
     ) {
 
-    include 'apache::params'
+    include '::apache::params'
 
-    file { "/etc/httpd/conf.modules.d/${name}.conf":
+    file { "/etc/httpd/conf.modules.d/${filename}.conf":
         ensure  => $ensure,
         owner   => 'root',
         group   => 'root',
@@ -43,9 +59,9 @@ define apache::module_config (
         seltype => 'httpd_config_t',
         source  => $source,
         content => $content,
-        require => Package[$apache::params::packages],
-        before  => Service[$apache::params::services],
-        notify  => Service[$apache::params::services],
+        require => Package[$::apache::params::packages],
+        before  => Service[$::apache::params::services],
+        notify  => Service[$::apache::params::services],
     }
 
 }

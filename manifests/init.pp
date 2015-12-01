@@ -2,9 +2,13 @@
 #
 # == Class: apache
 #
-# Configures a host to provide an Apache web server.
+# Manages the Apache web server.
 #
 # === Parameters
+#
+# ==== Required
+#
+# ==== Optional
 #
 # [*anon_write*]
 #   Configure SE Linux to allow httpd to modify public files used for public
@@ -29,6 +33,10 @@
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
+#
+# === Copyright
+#
+# Copyright 2010-2015 John Florian
 
 
 class apache (
@@ -37,25 +45,23 @@ class apache (
         $network_connect_db=false,
         $use_nfs=false,
         $manage_firewall=true,
-    ) {
+    ) inherits ::apache::params {
 
-    include 'apache::params'
-
-    package { $apache::params::packages:
+    package { $::apache::params::packages:
         ensure => installed,
-        notify => Service[$apache::params::services],
+        notify => Service[$::apache::params::services],
     }
 
     File {
-        owner       => 'root',
-        group       => 'root',
-        mode        => '0640',
-        seluser     => 'system_u',
-        selrole     => 'object_r',
-        seltype     => 'httpd_config_t',
-        before      => Service[$apache::params::services],
-        notify      => Service[$apache::params::services],
-        subscribe   => Package[$apache::params::packages],
+        owner     => 'root',
+        group     => 'root',
+        mode      => '0640',
+        seluser   => 'system_u',
+        selrole   => 'object_r',
+        seltype   => 'httpd_config_t',
+        before    => Service[$::apache::params::services],
+        notify    => Service[$::apache::params::services],
+        subscribe => Package[$::apache::params::packages],
     }
 
     file { '/etc/httpd/conf/httpd.conf':
@@ -72,25 +78,25 @@ class apache (
     }
 
     Selinux::Boolean {
-        persistent  => true,
-        before      => Service[$apache::params::services],
+        before     => Service[$::apache::params::services],
+        persistent => true,
     }
 
     selinux::boolean {
-        $apache::params::bool_anon_write:
+        $::apache::params::bool_anon_write:
             value => $anon_write;
 
-        $apache::params::bool_can_network_connect:
+        $::apache::params::bool_can_network_connect:
             value => $network_connect;
 
-        $apache::params::bool_can_network_connect_db:
+        $::apache::params::bool_can_network_connect_db:
             value => $network_connect_db;
 
-        $apache::params::bool_use_nfs:
+        $::apache::params::bool_use_nfs:
             value => $use_nfs;
     }
 
-    service { $apache::params::services:
+    service { $::apache::params::services:
         ensure     => running,
         enable     => true,
         hasrestart => true,

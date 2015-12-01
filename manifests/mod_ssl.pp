@@ -2,9 +2,13 @@
 #
 # == Class: apache::mod_ssl
 #
-# Configures the Apache web server to provide mod_ssl (HTTPS) support.
+# Manages the Apache web server to provide mod_ssl (HTTPS) support.
 #
 # === Parameters
+#
+# ==== Required
+#
+# ==== Optional
 #
 # [*manage_firewall*]
 #   If true, open the HTTPS port on the firewall.  Otherwise the firewall is
@@ -13,15 +17,19 @@
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
+#
+# === Copyright
+#
+# Copyright 2014-2015 John Florian
 
 
 class apache::mod_ssl (
         $manage_firewall=true,
     ) {
 
-    package { $apache::params::modssl_packages:
+    package { $::apache::params::modssl_packages:
         ensure => installed,
-        notify => Service[$apache::params::services],
+        notify => Service[$::apache::params::services],
     }
 
     if $manage_firewall {
