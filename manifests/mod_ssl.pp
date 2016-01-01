@@ -20,7 +20,7 @@
 #
 # === Copyright
 #
-# Copyright 2014-2015 John Florian
+# Copyright 2014-2016 John Florian
 
 
 class apache::mod_ssl (
