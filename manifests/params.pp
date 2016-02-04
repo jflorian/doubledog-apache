@@ -17,7 +17,7 @@ class apache::params {
 
     case $::operatingsystem {
 
-        'Fedora': {
+        'CentOS', 'Fedora': {
 
             $packages = 'httpd'
             $modpassenger_packages = 'mod_passenger'
