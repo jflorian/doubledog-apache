@@ -25,7 +25,7 @@
 
 class apache::mod_ssl (
         $manage_firewall=true,
-    ) {
+    ) inherits ::apache::params {
 
     package { $::apache::params::modssl_packages:
         ensure => installed,
