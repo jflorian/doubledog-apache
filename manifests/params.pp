@@ -20,6 +20,7 @@ class apache::params {
         'CentOS', 'Fedora': {
 
             $packages = 'httpd'
+            $modauthkrb_packages = 'mod_auth_kerb'
             $modpassenger_packages = 'mod_passenger'
             $modssl_packages = 'mod_ssl'
             $services = 'httpd'
