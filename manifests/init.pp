@@ -36,7 +36,7 @@
 #
 # === Copyright
 #
-# Copyright 2010-2016 John Florian
+# Copyright 2010-2017 John Florian
 
 
 class apache (
@@ -50,20 +50,21 @@ class apache (
     include '::apache::package'
     include '::apache::service'
 
-    File {
-        owner     => 'root',
-        group     => 'root',
-        mode      => '0640',
-        seluser   => 'system_u',
-        selrole   => 'object_r',
-        seltype   => 'httpd_config_t',
-        before    => Service[$::apache::params::services],
-        notify    => Service[$::apache::params::services],
-        subscribe => Package[$::apache::params::packages],
-    }
-
-    file { '/etc/httpd/conf/httpd.conf':
-        content  => template("apache/httpd.conf.${::operatingsystem}.${::operatingsystemmajrelease}"),
+    file {
+        default:
+            owner     => 'root',
+            group     => 'root',
+            mode      => '0640',
+            seluser   => 'system_u',
+            selrole   => 'object_r',
+            seltype   => 'httpd_config_t',
+            before    => Service[$::apache::params::services],
+            notify    => Service[$::apache::params::services],
+            subscribe => Package[$::apache::params::packages],
+            ;
+        '/etc/httpd/conf/httpd.conf':
+            content  => template("apache/httpd.conf.${::operatingsystem}.${::operatingsystemmajrelease}"),
+            ;
     }
 
     if $manage_firewall {
@@ -75,23 +76,23 @@ class apache (
         }
     }
 
-    Selinux::Boolean {
-        before     => Service[$::apache::params::services],
-        persistent => true,
-    }
-
     selinux::boolean {
+        default:
+            before     => Service[$::apache::params::services],
+            persistent => true,
+            ;
         $::apache::params::bool_anon_write:
-            value => $anon_write;
-
+            value => $anon_write,
+            ;
         $::apache::params::bool_can_network_connect:
-            value => $network_connect;
-
+            value => $network_connect,
+            ;
         $::apache::params::bool_can_network_connect_db:
-            value => $network_connect_db;
-
+            value => $network_connect_db,
+            ;
         $::apache::params::bool_use_nfs:
-            value => $use_nfs;
+            value => $use_nfs,
+            ;
     }
 
 }
