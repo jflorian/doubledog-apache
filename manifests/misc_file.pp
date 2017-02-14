@@ -15,6 +15,10 @@
 #
 # ==== Optional
 #
+# [*content*]
+#   Literal content for the file.  If neither "content" nor "source" is given,
+#   the content of the file will be left unmanaged.
+#
 # [*ensure*]
 #   Instance is to be 'present' (default) or 'absent'.  Alternatively,
 #   a Boolean value may also be used with true equivalent to 'present' and
@@ -25,9 +29,17 @@
 #   in place of "namevar" if it's beneficial to give namevar an arbitrary
 #   value.
 #
-# [*content*]
-#   Literal content for the file.  If neither "content" nor "source" is given,
-#   the content of the file will be left unmanaged.
+# [*group*]
+#   File group account.  Defaults to 'root' which is appropriate for most
+#   files.
+#
+# [*mode*]
+#   File access mode.  Defaults to '0640' which is appropriate for most
+#   files.
+#
+# [*owner*]
+#   File owner account.  Defaults to 'root' which is appropriate for most
+#   files.
 #
 # [*source*]
 #   URI of the file content.  If neither "content" nor "source" is given, the
@@ -63,6 +75,7 @@ define apache::misc_file (
         content => $content,
         source  => $source,
         require => Class['::apache::package'],
+        before  => Class['::apache::service'],
         notify  => Class['::apache::service'],
     }
 
