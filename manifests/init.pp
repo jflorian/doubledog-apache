@@ -1,5 +1,3 @@
-# modules/apache/manifests/init.pp
-#
 # == Class: apache
 #
 # Manages the Apache web server.
@@ -12,7 +10,11 @@
 #
 # [*anon_write*]
 #   Configure SE Linux to allow httpd to modify public files used for public
-#   file tranfer services.  One of: true or false (default).
+#   file transfer services.  One of: true or false (default).
+#
+# [*manage_firewall*]
+#   If true, open the HTTP port on the firewall.  Otherwise the firewall is
+#   left unaffected.  Defaults to true.
 #
 # [*network_connect*]
 #   Configure SE Linux to allow httpd scripts and modules to connect to the
@@ -26,10 +28,6 @@
 #   Configure SE Linux to allow the serving content reached via NFS.  One of:
 #   true or false (default).
 #
-# [*manage_firewall*]
-#   If true, open the HTTP port on the firewall.  Otherwise the firewall is
-#   left unaffected.  Defaults to true.
-#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
@@ -41,10 +39,10 @@
 
 class apache (
         Boolean             $anon_write,
+        Boolean             $manage_firewall,
         Boolean             $network_connect,
         Boolean             $network_connect_db,
         Boolean             $use_nfs,
-        Boolean             $manage_firewall,
     ) {
 
     include '::apache::package'

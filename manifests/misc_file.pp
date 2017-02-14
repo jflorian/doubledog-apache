@@ -1,5 +1,3 @@
-# modules/apache/manifests/misc_file.pp
-#
 # == Define: apache::misc_file
 #
 # Manages a miscellaneous file for the Apache web server.

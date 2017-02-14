@@ -1,5 +1,3 @@
-# modules/apache/manifests/site_config.pp
-#
 # == Define: apache::site_config
 #
 # Manages a site-specific configuration file for the Apache web server.

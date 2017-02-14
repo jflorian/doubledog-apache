@@ -1,5 +1,3 @@
-# modules/apache/manifests/service.pp
-#
 # == Class: apache::service
 #
 # Manages the Apache web server service.
@@ -10,6 +8,9 @@
 #
 # ==== Optional
 #
+# [*daemon*]
+#   The service name of the Apache HTTP daemon.
+#
 # [*enable*]
 #   Instance is to be started at boot.  Either true (default) or false.
 #
@@ -17,9 +18,6 @@
 #   Instance is to be 'running' (default) or 'stopped'.  Alternatively,
 #   a Boolean value may also be used with true equivalent to 'running' and
 #   false equivalent to 'stopped'.
-#
-# [*daemon*]
-#   The service name of the Apache HTTP daemon.
 #
 # === Authors
 #
@@ -32,8 +30,8 @@
 
 class apache::service (
         Variant[Boolean, Enum['running', 'stopped']] $ensure,
-        Boolean                 $enable,
         String[1]               $daemon,
+        Boolean                 $enable,
     ) {
 
     service { $daemon:

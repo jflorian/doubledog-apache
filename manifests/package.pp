@@ -1,5 +1,3 @@
-# modules/apache/manifests/package.pp
-#
 # == Class: apache::package
 #
 # Manages the Apache web server packages.

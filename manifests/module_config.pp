@@ -1,5 +1,3 @@
-# modules/apache/manifests/module_config.pp
-#
 # == Define: apache::module_config
 #
 # Manages a module configuration file for the Apache web server.

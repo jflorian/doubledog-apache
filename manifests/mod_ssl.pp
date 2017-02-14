@@ -1,5 +1,3 @@
-# modules/apache/manifests/mod_ssl.pp
-#
 # == Class: apache::mod_ssl
 #
 # Manages the Apache web server to provide HTTPS support.

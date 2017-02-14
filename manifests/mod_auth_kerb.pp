@@ -1,5 +1,3 @@
-# modules/apache/manifests/mod_auth_kerb.pp
-#
 # == Class: apache::mod_auth_kerb
 #
 # Manages the Apache web server to provide authorization via Kerberos.

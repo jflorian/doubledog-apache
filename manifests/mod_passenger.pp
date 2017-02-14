@@ -1,5 +1,3 @@
-# modules/apache/manifests/mod_passenger.pp
-#
 # == Class: apache::mod_passenger
 #
 # Configures the Apache web server to provide Phusion Passenger support.
