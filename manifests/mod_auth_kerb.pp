@@ -10,6 +10,10 @@
 #
 # ==== Optional
 #
+# [*packages*]
+#   An array of package names needed for the Apache web server with Kerberos
+#   installation.
+#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
@@ -20,10 +24,11 @@
 
 
 class apache::mod_auth_kerb (
-        String[1] $keytab_source,
-    ) inherits ::apache::params {
+        String[1]               $keytab_source,
+        Array[String[1], 1]     $packages,
+    ) {
 
-    package { $::apache::params::modauthkrb_packages:
+    package { $packages:
         ensure => installed,
         notify => Class['::apache::service'],
     }

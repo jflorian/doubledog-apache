@@ -40,12 +40,12 @@
 
 
 class apache (
-        $anon_write=false,
-        $network_connect=false,
-        $network_connect_db=false,
-        $use_nfs=false,
-        $manage_firewall=true,
-    ) inherits ::apache::params {
+        $anon_write,
+        $network_connect,
+        $network_connect_db,
+        $use_nfs,
+        $manage_firewall,
+    ) {
 
     include '::apache::package'
     include '::apache::service'
@@ -81,16 +81,16 @@ class apache (
             before     => Class['::apache::service'],
             persistent => true,
             ;
-        $::apache::params::bool_anon_write:
+        'httpd_anon_write':
             value => $anon_write,
             ;
-        $::apache::params::bool_can_network_connect:
+        'httpd_can_network_connect':
             value => $network_connect,
             ;
-        $::apache::params::bool_can_network_connect_db:
+        'httpd_can_network_connect_db':
             value => $network_connect_db,
             ;
-        $::apache::params::bool_use_nfs:
+        'httpd_use_nfs':
             value => $use_nfs,
             ;
     }

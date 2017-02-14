@@ -50,8 +50,6 @@ define apache::misc_file (
         $mode='0640',
     ) {
 
-    include '::apache::params'
-
     file { "/etc/httpd/${filename}":
         ensure  => $ensure,
         owner   => $owner,

@@ -2,7 +2,7 @@
 #
 # == Class: apache::mod_ssl
 #
-# Manages the Apache web server to provide mod_ssl (HTTPS) support.
+# Manages the Apache web server to provide HTTPS support.
 #
 # === Parameters
 #
@@ -24,10 +24,11 @@
 
 
 class apache::mod_ssl (
-        $manage_firewall=true,
-    ) inherits ::apache::params {
+        $manage_firewall,
+        Array[String[1], 1]     $packages,
+    ) {
 
-    package { $::apache::params::modssl_packages:
+    package { $packages:
         ensure => installed,
         notify => Class['::apache::service'],
     }

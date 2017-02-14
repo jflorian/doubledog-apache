@@ -6,16 +6,28 @@
 #
 # === Parameters
 #
-# NONE
+# ==== Required
+#
+# ==== Optional
+#
+# [*packages*]
+#   An array of package names needed for the Apache web server with Phusion
+#   Passenger installation.
 #
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
+#
+# === Copyright
+#
+# Copyright 2014-2017 John Florian
 
 
-class apache::mod_passenger {
+class apache::mod_passenger (
+        Array[String[1], 1]     $packages,
+    ) {
 
-    package { $apache::params::modpassenger_packages:
+    package { $packages:
         ensure => installed,
         notify => Class['::apache::service'],
     }

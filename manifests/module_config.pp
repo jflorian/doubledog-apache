@@ -47,8 +47,6 @@ define apache::module_config (
         $content=undef,
     ) {
 
-    include '::apache::params'
-
     file { "/etc/httpd/conf.modules.d/${filename}.conf":
         ensure  => $ensure,
         owner   => 'root',

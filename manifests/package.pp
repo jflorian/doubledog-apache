@@ -10,6 +10,9 @@
 #
 # ==== Optional
 #
+# [*names*]
+#   An array of package names needed for the Apache web server installation.
+#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
@@ -20,9 +23,10 @@
 
 
 class apache::package (
-    ) inherits ::apache::params {
+        Array[String[1], 1]     $names,
+    ) {
 
-    package { $::apache::params::packages:
+    package { $names:
         ensure => installed,
         notify => Class['::apache::service'],
     }

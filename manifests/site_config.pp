@@ -47,8 +47,6 @@ define apache::site_config (
         $source=undef,
     ) {
 
-    include '::apache::params'
-
     file { "/etc/httpd/conf.d/${filename}.conf":
         ensure  => $ensure,
         owner   => 'root',

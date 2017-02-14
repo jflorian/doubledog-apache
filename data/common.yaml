@@ -1,0 +1,23 @@
+---
+apache::anon_write:                 false
+apache::network_connect:            false
+apache::network_connect_db:         false
+apache::use_nfs:                    false
+apache::manage_firewall:            true
+
+apache::mod_auth_kerb::packages:
+    - mod_auth_kerb
+
+apache::mod_passenger::packages:
+    - mod_passenger
+
+apache::mod_ssl::manage_firewall:   true
+apache::mod_ssl::packages:
+    - mod_ssl
+
+apache::package::names:
+    - httpd
+
+apache::service::enable:            true
+apache::service::ensure:            running
+apache::service::daemon:            httpd
