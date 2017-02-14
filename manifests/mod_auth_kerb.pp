@@ -10,6 +10,9 @@
 #
 # ==== Optional
 #
+# [*keytab_source*]
+#   URI of the Kerberos keytab file content.
+#
 # [*packages*]
 #   An array of package names needed for the Apache web server with Kerberos
 #   installation.
