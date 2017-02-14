@@ -16,7 +16,9 @@
 # ==== Optional
 #
 # [*ensure*]
-#   Instance is to be 'present' (default) or 'absent'.
+#   Instance is to be 'present' (default) or 'absent'.  Alternatively,
+#   a Boolean value may also be used with true equivalent to 'present' and
+#   false equivalent to 'absent'.
 #
 # [*filename*]
 #   Name to be given to the file, without any path details.  This may be used
@@ -41,13 +43,13 @@
 
 
 define apache::misc_file (
-        $ensure='present',
-        $filename=$title,
-        $content=undef,
-        $source=undef,
-        $owner='root',
-        $group='apache',
-        $mode='0640',
+        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
+        Optional[String[1]]     $content=undef,
+        String[1]               $filename=$title,
+        String[1]               $group='apache',
+        Pattern[/[0-7]{4}/]     $mode='0640',
+        String[1]               $owner='root',
+        Optional[String[1]]     $source=undef,
     ) {
 
     file { "/etc/httpd/${filename}":

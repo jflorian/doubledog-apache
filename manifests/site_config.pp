@@ -16,7 +16,9 @@
 # ==== Optional
 #
 # [*ensure*]
-#   Instance is to be 'present' (default) or 'absent'.
+#   Instance is to be 'present' (default) or 'absent'.  Alternatively,
+#   a Boolean value may also be used with true equivalent to 'present' and
+#   false equivalent to 'absent'.
 #
 # [*filename*]
 #   Name to be given to the configuration file, without any path details.
@@ -41,10 +43,10 @@
 
 
 define apache::site_config (
-        $ensure='present',
-        $filename=$title,
-        $content=undef,
-        $source=undef,
+        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
+        Optional[String[1]]     $content=undef,
+        String[1]               $filename=$title,
+        Optional[String[1]]     $source=undef,
     ) {
 
     file { "/etc/httpd/conf.d/${filename}.conf":

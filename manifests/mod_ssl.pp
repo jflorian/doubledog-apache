@@ -24,7 +24,7 @@
 
 
 class apache::mod_ssl (
-        $manage_firewall,
+        Boolean                 $manage_firewall,
         Array[String[1], 1]     $packages,
     ) {
 

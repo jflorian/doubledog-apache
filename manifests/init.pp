@@ -40,11 +40,11 @@
 
 
 class apache (
-        $anon_write,
-        $network_connect,
-        $network_connect_db,
-        $use_nfs,
-        $manage_firewall,
+        Boolean             $anon_write,
+        Boolean             $network_connect,
+        Boolean             $network_connect_db,
+        Boolean             $use_nfs,
+        Boolean             $manage_firewall,
     ) {
 
     include '::apache::package'
