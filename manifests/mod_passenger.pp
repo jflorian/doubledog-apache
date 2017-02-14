@@ -17,7 +17,7 @@ class apache::mod_passenger {
 
     package { $apache::params::modpassenger_packages:
         ensure => installed,
-        notify => Service[$apache::params::services],
+        notify => Class['::apache::service'],
     }
 
 }

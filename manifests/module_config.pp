@@ -37,7 +37,7 @@
 #
 # === Copyright
 #
-# Copyright 2014-2016 John Florian
+# Copyright 2014-2017 John Florian
 
 
 define apache::module_config (
@@ -59,9 +59,9 @@ define apache::module_config (
         seltype => 'httpd_config_t',
         source  => $source,
         content => $content,
-        require => Package[$::apache::params::packages],
-        before  => Service[$::apache::params::services],
-        notify  => Service[$::apache::params::services],
+        require => Class['::apache::package'],
+        before  => Class['::apache::service'],
+        notify  => Class['::apache::service'],
     }
 
 }

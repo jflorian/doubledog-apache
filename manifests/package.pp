@@ -16,7 +16,7 @@
 #
 # === Copyright
 #
-# Copyright 2015-2016 John Florian
+# Copyright 2015-2017 John Florian
 
 
 class apache::package (
@@ -24,7 +24,7 @@ class apache::package (
 
     package { $::apache::params::packages:
         ensure => installed,
-        notify => Service[$::apache::params::services],
+        notify => Class['::apache::service'],
     }
 
 }

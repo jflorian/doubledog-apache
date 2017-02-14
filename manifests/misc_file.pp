@@ -37,7 +37,7 @@
 #
 # === Copyright
 #
-# Copyright 2014-2016 John Florian
+# Copyright 2014-2017 John Florian
 
 
 define apache::misc_file (
@@ -62,8 +62,8 @@ define apache::misc_file (
         seltype => 'httpd_config_t',
         content => $content,
         source  => $source,
-        require => Package[$::apache::params::packages],
-        notify  => Service[$::apache::params::services],
+        require => Class['::apache::package'],
+        notify  => Class['::apache::service'],
     }
 
 }

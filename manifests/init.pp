@@ -58,9 +58,9 @@ class apache (
             seluser   => 'system_u',
             selrole   => 'object_r',
             seltype   => 'httpd_config_t',
-            before    => Service[$::apache::params::services],
-            notify    => Service[$::apache::params::services],
-            subscribe => Package[$::apache::params::packages],
+            before    => Class['::apache::service'],
+            notify    => Class['::apache::service'],
+            subscribe => Class['::apache::package'],
             ;
         '/etc/httpd/conf/httpd.conf':
             content  => template("apache/httpd.conf.${::operatingsystem}.${::operatingsystemmajrelease}"),
@@ -78,7 +78,7 @@ class apache (
 
     selinux::boolean {
         default:
-            before     => Service[$::apache::params::services],
+            before     => Class['::apache::service'],
             persistent => true,
             ;
         $::apache::params::bool_anon_write:

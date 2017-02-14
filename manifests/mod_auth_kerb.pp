@@ -16,7 +16,7 @@
 #
 # === Copyright
 #
-# Copyright 2016 John Florian
+# Copyright 2016-2017 John Florian
 
 
 class apache::mod_auth_kerb (
@@ -25,7 +25,7 @@ class apache::mod_auth_kerb (
 
     package { $::apache::params::modauthkrb_packages:
         ensure => installed,
-        notify => Service[$::apache::params::services],
+        notify => Class['::apache::service'],
     }
 
     ::apache::misc_file { 'conf/http.keytab':

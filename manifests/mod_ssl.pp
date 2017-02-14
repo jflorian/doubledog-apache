@@ -20,7 +20,7 @@
 #
 # === Copyright
 #
-# Copyright 2014-2016 John Florian
+# Copyright 2014-2017 John Florian
 
 
 class apache::mod_ssl (
@@ -29,7 +29,7 @@ class apache::mod_ssl (
 
     package { $::apache::params::modssl_packages:
         ensure => installed,
-        notify => Service[$::apache::params::services],
+        notify => Class['::apache::service'],
     }
 
     if $manage_firewall {
