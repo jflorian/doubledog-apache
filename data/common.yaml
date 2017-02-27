@@ -15,6 +15,9 @@ apache::mod_ssl::manage_firewall:   true
 apache::mod_ssl::packages:
     - mod_ssl
 
+apache::mod_wsgi::packages:
+    - mod_wsgi
+
 apache::package::names:
     - httpd
 
