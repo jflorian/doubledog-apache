@@ -42,6 +42,7 @@ class apache (
         Boolean             $manage_firewall,
         Boolean             $network_connect,
         Boolean             $network_connect_db,
+        Boolean             $network_relay,
         Boolean             $use_nfs,
     ) {
 
@@ -87,6 +88,9 @@ class apache (
             ;
         'httpd_can_network_connect_db':
             value => $network_connect_db,
+            ;
+        'httpd_can_network_relay':
+            value => $network_relay,
             ;
         'httpd_use_nfs':
             value => $use_nfs,

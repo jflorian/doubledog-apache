@@ -2,6 +2,7 @@
 apache::anon_write:                 false
 apache::network_connect:            false
 apache::network_connect_db:         false
+apache::network_relay:              false
 apache::use_nfs:                    false
 apache::manage_firewall:            true
 
