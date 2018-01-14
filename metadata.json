@@ -10,7 +10,7 @@
 		"operatingsystemrelease": "7.0"
 	}, {
 		"operatingsystem": "Fedora",
-		"operatingsystemrelease": ["23", "24", "25"]
+		"operatingsystemrelease": ["23", "24", "25", "27"]
 	}],
 	"dependencies": [{
 		"name": "doubledog/selinux",
