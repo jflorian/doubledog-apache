@@ -1,10 +1,7 @@
-# == Class: apache::mod_auth_kerb
+# == Class: apache::mod_auth_gssapi
 #
-# Manages the Apache web server to provide authorization via Kerberos.
-#
-# Warning:
-#   This uses the deprecated mod_auth_kerb module for Apache.  If possible,
-#   you shoud use apache::mod_auth_gssapi instead.
+# Manages the Apache web server to provide authorization via Kerberos using
+# only GSSAPI calls.
 #
 # === Parameters
 #
@@ -25,10 +22,10 @@
 #
 # === Copyright
 #
-# Copyright 2016-2018 John Florian
+# Copyright 2018 John Florian
 
 
-class apache::mod_auth_kerb (
+class apache::mod_auth_gssapi (
         String[1]               $keytab_source,
         Array[String[1], 1]     $packages,
     ) {
