@@ -12,6 +12,11 @@
 #   Configure SE Linux to allow httpd to modify public files used for public
 #   file transfer services.  One of: true or false (default).
 #
+# [*log_level*]
+#   Controls the number of messages logged to the error_log.  Possible values
+#   include: debug, info, notice, warn, error, crit, alert, emerg.  The
+#   default is warn.
+#
 # [*manage_firewall*]
 #   If true, open the HTTP port on the firewall.  Otherwise the firewall is
 #   left unaffected.  Defaults to true.
@@ -34,11 +39,13 @@
 #
 # === Copyright
 #
-# Copyright 2010-2017 John Florian
+# Copyright 2010-2018 John Florian
 
 
 class apache (
         Boolean             $anon_write,
+        Optional[Enum['emerg', 'alert', 'crit', 'error', 'warn', 'notice', 'info', 'debug']]
+                            $log_level,
         Boolean             $manage_firewall,
         Boolean             $network_connect,
         Boolean             $network_connect_db,

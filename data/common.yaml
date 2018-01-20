@@ -1,5 +1,6 @@
 ---
 apache::anon_write:                 false
+apache::log_level:                  warn
 apache::network_connect:            false
 apache::network_connect_db:         false
 apache::network_relay:              false
