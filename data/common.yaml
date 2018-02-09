@@ -7,6 +7,8 @@ apache::network_relay:              false
 apache::use_nfs:                    false
 apache::manage_firewall:            true
 
+apache::mod_auth_gssapi::keytab_content:    null
+apache::mod_auth_gssapi::keytab_source:     null
 apache::mod_auth_gssapi::packages:
     - mod_auth_gssapi
 

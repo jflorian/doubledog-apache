@@ -9,8 +9,13 @@
 #
 # ==== Optional
 #
+# [*keytab_content*]
+#   Literal content for the Kerberos keytab file.  If neither "content" nor
+#   "source" is given, the content of the file will be left unmanaged.
+#
 # [*keytab_source*]
-#   URI of the Kerberos keytab file content.
+#   URI of the Kerberos keytab file content.  If neither "content" nor
+#   "source" is given, the content of the file will be left unmanaged.
 #
 # [*packages*]
 #   An array of package names needed for the Apache web server with Kerberos
@@ -26,7 +31,8 @@
 
 
 class apache::mod_auth_gssapi (
-        String[1]               $keytab_source,
+        Optional[String[1]]     $keytab_content,
+        Optional[String[1]]     $keytab_source,
         Array[String[1], 1]     $packages,
     ) {
 
@@ -36,7 +42,8 @@ class apache::mod_auth_gssapi (
     }
 
     ::apache::misc_file { 'conf/http.keytab':
-        source => $keytab_source,
+        content => $keytab_content,
+        source  => $keytab_source,
     }
 
 }
