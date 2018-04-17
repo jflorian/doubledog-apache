@@ -39,6 +39,7 @@ This module lets you manage the Apache httpd web server.
 **Classes:**
 
 * [apache](#apache-class)
+* [apache::mod\_auth\_gssapi](#apachemod_auth_gssapi-class)
 * [apache::package](#apachepackage-class)
 * [apache::service](#apacheservice-class)
 
@@ -70,6 +71,21 @@ Should SELinux allow httpd scripts and modules to connect to databases over the 
 
 ##### `use_nfs`
 Should SELinux allow serving content reached via NFS?  Either `true` or `false` (default).
+
+
+#### apache::mod\_auth\_gssapi class
+
+This class manages the Apache web server to provide authorization via Kerberos using
+only GSSAPI calls.
+
+##### `keytab_content`
+Literal content for the Kerberos keytab file.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+
+##### `keytab_source`
+URI of the Kerberos keytab file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+
+##### `packages`
+An array of package names needed for httpd authorization via Kerberos using only GSSAPI calls.  The default should be correct for supported platforms.
 
 
 #### apache::package class

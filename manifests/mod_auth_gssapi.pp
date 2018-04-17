@@ -1,25 +1,8 @@
+#
 # == Class: apache::mod_auth_gssapi
 #
 # Manages the Apache web server to provide authorization via Kerberos using
 # only GSSAPI calls.
-#
-# === Parameters
-#
-# ==== Required
-#
-# ==== Optional
-#
-# [*keytab_content*]
-#   Literal content for the Kerberos keytab file.  If neither "content" nor
-#   "source" is given, the content of the file will be left unmanaged.
-#
-# [*keytab_source*]
-#   URI of the Kerberos keytab file content.  If neither "content" nor
-#   "source" is given, the content of the file will be left unmanaged.
-#
-# [*packages*]
-#   An array of package names needed for the Apache web server with Kerberos
-#   installation.
 #
 # === Authors
 #
@@ -27,7 +10,9 @@
 #
 # === Copyright
 #
+# This file is part of the doubledog-apache Puppet module.
 # Copyright 2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class apache::mod_auth_gssapi (
