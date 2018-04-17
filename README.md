@@ -42,6 +42,7 @@ This module lets you manage the Apache httpd web server.
 * [apache::mod\_auth\_gssapi](#apachemod_auth_gssapi-class)
 * [apache::mod\_passenger](#apachemod_passenger-class)
 * [apache::mod\_ssl](#apachemod_ssl-class)
+* [apache::mod\_wsgi](#apachemod_wsgi-class)
 * [apache::package](#apachepackage-class)
 * [apache::service](#apacheservice-class)
 
@@ -105,6 +106,14 @@ This class manages the Apache web server to provide HTTPS support.
 
 ##### `manage_firewall`
 If `true`, open the HTTPS port on the firewall.  Otherwise the firewall is left unaffected.  Defaults to `true`.
+
+
+#### apache::mod\_wsgi class
+
+This class manages the Apache web server to provide Web Server Gateway Interface support.
+
+##### `packages`
+An array of package names needed for WSGI support.  The default should be correct for supported platforms.
 
 
 #### apache::package class
