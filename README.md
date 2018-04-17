@@ -41,6 +41,7 @@ This module lets you manage the Apache httpd web server.
 * [apache](#apache-class)
 * [apache::mod\_auth\_gssapi](#apachemod_auth_gssapi-class)
 * [apache::mod\_passenger](#apachemod_passenger-class)
+* [apache::mod\_ssl](#apachemod_ssl-class)
 * [apache::package](#apachepackage-class)
 * [apache::service](#apacheservice-class)
 
@@ -95,6 +96,14 @@ This class manages the Apache web server to provide Phusion Passenger support.
 
 ##### `packages`
 An array of package names needed for httpd Phusion Passenger support.  The default should be correct for supported platforms.
+
+
+#### apache::mod\_ssl class
+
+This class manages the Apache web server to provide HTTPS support.
+
+##### `manage_firewall`
+If `true`, open the HTTPS port on the firewall.  Otherwise the firewall is left unaffected.  Defaults to `true`.
 
 
 #### apache::package class

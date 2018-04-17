@@ -1,16 +1,7 @@
+#
 # == Class: apache::mod_ssl
 #
 # Manages the Apache web server to provide HTTPS support.
-#
-# === Parameters
-#
-# ==== Required
-#
-# ==== Optional
-#
-# [*manage_firewall*]
-#   If true, open the HTTPS port on the firewall.  Otherwise the firewall is
-#   left unaffected.  Defaults to true.
 #
 # === Authors
 #
@@ -18,7 +9,9 @@
 #
 # === Copyright
 #
-# Copyright 2014-2017 John Florian
+# This file is part of the doubledog-apache Puppet module.
+# Copyright 2014-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class apache::mod_ssl (
