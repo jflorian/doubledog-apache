@@ -40,6 +40,7 @@ This module lets you manage the Apache httpd web server.
 
 * [apache](#apache-class)
 * [apache::mod\_auth\_gssapi](#apachemod_auth_gssapi-class)
+* [apache::mod\_passenger](#apachemod_passenger-class)
 * [apache::package](#apachepackage-class)
 * [apache::service](#apacheservice-class)
 
@@ -86,6 +87,14 @@ URI of the Kerberos keytab file content.  If neither *content* nor *source* is g
 
 ##### `packages`
 An array of package names needed for httpd authorization via Kerberos using only GSSAPI calls.  The default should be correct for supported platforms.
+
+
+#### apache::mod\_passenger class
+
+This class manages the Apache web server to provide Phusion Passenger support.
+
+##### `packages`
+An array of package names needed for httpd Phusion Passenger support.  The default should be correct for supported platforms.
 
 
 #### apache::package class

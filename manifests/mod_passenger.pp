@@ -1,16 +1,7 @@
+#
 # == Class: apache::mod_passenger
 #
-# Configures the Apache web server to provide Phusion Passenger support.
-#
-# === Parameters
-#
-# ==== Required
-#
-# ==== Optional
-#
-# [*packages*]
-#   An array of package names needed for the Apache web server with Phusion
-#   Passenger installation.
+# Manages the Apache web server to provide Phusion Passenger support.
 #
 # === Authors
 #
@@ -18,7 +9,9 @@
 #
 # === Copyright
 #
-# Copyright 2014-2017 John Florian
+# This file is part of the doubledog-apache Puppet module.
+# Copyright 2014-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class apache::mod_passenger (
