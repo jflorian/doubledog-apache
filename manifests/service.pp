@@ -1,23 +1,7 @@
+#
 # == Class: apache::service
 #
 # Manages the Apache web server service.
-#
-# === Parameters
-#
-# ==== Required
-#
-# ==== Optional
-#
-# [*daemon*]
-#   The service name of the Apache HTTP daemon.
-#
-# [*enable*]
-#   Instance is to be started at boot.  Either true (default) or false.
-#
-# [*ensure*]
-#   Instance is to be 'running' (default) or 'stopped'.  Alternatively,
-#   a Boolean value may also be used with true equivalent to 'running' and
-#   false equivalent to 'stopped'.
 #
 # === Authors
 #
@@ -25,7 +9,9 @@
 #
 # === Copyright
 #
-# Copyright 2015-2017 John Florian
+# This file is part of the doubledog-apache Puppet module.
+# Copyright 2015-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class apache::service (

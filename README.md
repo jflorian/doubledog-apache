@@ -40,6 +40,7 @@ This module lets you manage the Apache httpd web server.
 
 * [apache](#apache-class)
 * [apache::package](#apachepackage-class)
+* [apache::service](#apacheservice-class)
 
 **Defined types:**
 
@@ -75,6 +76,20 @@ This class manages packages needed for a minimal installation.
 
 ##### `names`
 An array of package names needed for a minimal installation.  The default should be correct for supported platforms.
+
+
+#### apache::service class
+
+This class manages the service itself.
+
+##### `daemon`
+The service name of the httpd daemon.  The default should be correct for supported platforms.
+
+##### `enable`
+Instance is to be started at boot.  Either `true` (default) or `false`.
+
+##### `ensure`
+Instance is to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
 
 
 ### Defined types
