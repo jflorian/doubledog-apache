@@ -39,6 +39,7 @@ This module lets you manage the Apache httpd web server.
 **Classes:**
 
 * [apache](#apache-class)
+* [apache::package](#apachepackage-class)
 
 **Defined types:**
 
@@ -66,6 +67,14 @@ Should SELinux allow httpd scripts and modules to connect to databases over the 
 
 ##### `use_nfs`
 Should SELinux allow serving content reached via NFS?  Either `true` or `false` (default).
+
+
+#### apache::package class
+
+This class manages packages needed for a minimal installation.
+
+##### `names`
+An array of package names needed for a minimal installation.  The default should be correct for supported platforms.
 
 
 ### Defined types

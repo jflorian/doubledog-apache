@@ -1,15 +1,7 @@
+#
 # == Class: apache::package
 #
-# Manages the Apache web server packages.
-#
-# === Parameters
-#
-# ==== Required
-#
-# ==== Optional
-#
-# [*names*]
-#   An array of package names needed for the Apache web server installation.
+# Manages the minimal Apache web server packages.
 #
 # === Authors
 #
@@ -17,7 +9,9 @@
 #
 # === Copyright
 #
-# Copyright 2015-2017 John Florian
+# This file is part of the doubledog-apache Puppet module.
+# Copyright 2015-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class apache::package (
