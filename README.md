@@ -158,7 +158,7 @@ Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean val
 Name to be given to the file, without any path details.  This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.
 
 ##### `group`
-File group account.  Defaults to 'root' which is appropriate for most files.
+File group account.  Defaults to 'apache' which is appropriate for most files.
 
 ##### `mode`
 File access mode.  Defaults to '0640' which is appropriate for most files.
@@ -187,7 +187,7 @@ Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean val
 Name to be given to the file, without any path details nor a `.conf` suffix.  This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.
 
 ##### `group`
-File group account.  Defaults to 'root' which is appropriate for most files.
+File group account.  Defaults to 'apache' which is appropriate for most files.
 
 ##### `mode`
 File access mode.  Defaults to '0640' which is appropriate for most files.
@@ -216,7 +216,7 @@ Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean val
 Name to be given to the file, without any path details nor a `.conf` suffix.  This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.
 
 ##### `group`
-File group account.  Defaults to 'root' which is appropriate for most files.
+File group account.  Defaults to 'apache' which is appropriate for most files.
 
 ##### `mode`
 File access mode.  Defaults to '0640' which is appropriate for most files.
