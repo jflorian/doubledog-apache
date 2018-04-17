@@ -201,7 +201,7 @@ URI of the file content.  If neither *content* nor *source* is given, the conten
 
 #### apache::site\_config defined type
 
-This defined type manages a site-specific configur file for the web server.
+This defined type manages a site-specific configuration file for the web server.
 
 ##### `namevar` (required)
 An arbitrary identifier for the file instance unless the *filename* parameter is not set in which case this must provide the value normally set with the *filename* parameter.
