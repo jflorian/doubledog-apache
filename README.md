@@ -50,6 +50,7 @@ This module lets you manage the Apache httpd web server.
 
 * [apache::misc\_file](#apachemisc_file-defined-type)
 * [apache::module\_config](#apachemodule_config-defined-type)
+* [apache::site\_config](#apachesite_config-defined-type)
 
 
 ### Classes
@@ -172,6 +173,35 @@ URI of the file content.  If neither *content* nor *source* is given, the conten
 #### apache::module\_config defined type
 
 This defined type manages a module configuration file for the web server.
+
+##### `namevar` (required)
+An arbitrary identifier for the file instance unless the *filename* parameter is not set in which case this must provide the value normally set with the *filename* parameter.
+
+##### `content`
+Literal content for the file.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+
+##### `ensure`
+Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean value may also be used with `true` equivalent to `present` and `false` equivalent to `absent`.
+
+##### `filename`
+Name to be given to the file, without any path details nor a `.conf` suffix.  This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.
+
+##### `group`
+File group account.  Defaults to 'root' which is appropriate for most files.
+
+##### `mode`
+File access mode.  Defaults to '0640' which is appropriate for most files.
+
+##### `owner`
+File owner account.  Defaults to 'root' which is appropriate for most files.
+
+##### `source`
+URI of the file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+
+
+#### apache::site\_config defined type
+
+This defined type manages a site-specific configur file for the web server.
 
 ##### `namevar` (required)
 An arbitrary identifier for the file instance unless the *filename* parameter is not set in which case this must provide the value normally set with the *filename* parameter.
