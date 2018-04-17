@@ -1,37 +1,7 @@
+#
 # == Class: apache
 #
 # Manages the Apache web server.
-#
-# === Parameters
-#
-# ==== Required
-#
-# ==== Optional
-#
-# [*anon_write*]
-#   Configure SE Linux to allow httpd to modify public files used for public
-#   file transfer services.  One of: true or false (default).
-#
-# [*log_level*]
-#   Controls the number of messages logged to the error_log.  Possible values
-#   include: debug, info, notice, warn, error, crit, alert, emerg.  The
-#   default is warn.
-#
-# [*manage_firewall*]
-#   If true, open the HTTP port on the firewall.  Otherwise the firewall is
-#   left unaffected.  Defaults to true.
-#
-# [*network_connect*]
-#   Configure SE Linux to allow httpd scripts and modules to connect to the
-#   network using TCP.  One of: true or false (default).
-#
-# [*network_connect_db*]
-#   Configure SE Linux to allow httpd scripts and modules to connect to
-#   databases over the network.  One of: true or false (default).
-#
-# [*use_nfs*]
-#   Configure SE Linux to allow the serving content reached via NFS.  One of:
-#   true or false (default).
 #
 # === Authors
 #
@@ -39,7 +9,9 @@
 #
 # === Copyright
 #
+# This file is part of the doubledog-apache Puppet module.
 # Copyright 2010-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class apache (

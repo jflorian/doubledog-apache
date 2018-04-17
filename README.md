@@ -38,10 +38,34 @@ This module lets you manage the Apache httpd web server.
 
 **Classes:**
 
+* [apache](#apache-class)
+
 **Defined types:**
 
 
 ### Classes
+
+#### apache class
+
+This class manages the primary configuration, SELinux settings and firewall.  This also implies management of the [minimal packaging](#apachepackage-class) and the [service](#apacheservice-class).
+
+##### `anon_write`
+Should SELinux allow httpd to modify public files used for public file transfer services?  Either `true` or `false` (default).
+
+##### `log_level`
+Limits the level of messages logged to the `error_log`.  Valid values are: `debug`, `info`, `notice`, `warn`, `error`, `crit`, `alert`, `emerg`.  The default is `warn`.
+
+##### `manage_firewall`
+If `true`, open the HTTP port on the firewall.  Otherwise the firewall is left unaffected.  Defaults to `true`.
+
+##### `network_connect`
+Should SELinux allow httpd scripts and modules to connect to the network using TCP?  Either `true` or `false` (default).
+
+##### `network_connect_db`
+Should SELinux allow httpd scripts and modules to connect to databases over the network?  Either `true` or `false` (default).
+
+##### `use_nfs`
+Should SELinux allow serving content reached via NFS?  Either `true` or `false` (default).
 
 
 ### Defined types
