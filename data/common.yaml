@@ -2,6 +2,7 @@
 # Copyright 2017-2018 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 ---
+
 apache::anon_write:                 false
 apache::execmem:                    false
 apache::log_level:                  warn
@@ -9,6 +10,7 @@ apache::manage_firewall:            true
 apache::network_connect:            false
 apache::network_connect_db:         false
 apache::network_relay:              false
+apache::send_mail:                  false
 apache::use_nfs:                    false
 
 apache::mod_auth_gssapi::keytab_content:    null

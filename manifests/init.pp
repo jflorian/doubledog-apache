@@ -23,6 +23,7 @@ class apache (
         Boolean             $network_connect,
         Boolean             $network_connect_db,
         Boolean             $network_relay,
+        Boolean             $send_mail,
         Boolean             $use_nfs,
     ) {
 
@@ -71,6 +72,9 @@ class apache (
             ;
         'httpd_can_network_relay':
             value => $network_relay,
+            ;
+        'httpd_can_sendmail':
+            value => $send_mail,
             ;
         'httpd_execmem':
             value => $execmem,

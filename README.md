@@ -77,6 +77,9 @@ Should SELinux allow httpd scripts and modules to connect to the network using T
 ##### `network_connect_db`
 Should SELinux allow httpd scripts and modules to connect to databases over the network?  Either `true` or `false` (default).
 
+##### `send_mail`
+Should SELinux allow httpd to send mail?  Either `true` or `false` (default).
+
 ##### `use_nfs`
 Should SELinux allow serving content reached via NFS?  Either `true` or `false` (default).
 
