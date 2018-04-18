@@ -16,6 +16,7 @@
 
 class apache (
         Boolean             $anon_write,
+        Boolean             $execmem,
         Optional[Enum['emerg', 'alert', 'crit', 'error', 'warn', 'notice', 'info', 'debug']]
                             $log_level,
         Boolean             $manage_firewall,
@@ -70,6 +71,9 @@ class apache (
             ;
         'httpd_can_network_relay':
             value => $network_relay,
+            ;
+        'httpd_execmem':
+            value => $execmem,
             ;
         'httpd_use_nfs':
             value => $use_nfs,

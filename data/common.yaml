@@ -3,12 +3,13 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 ---
 apache::anon_write:                 false
+apache::execmem:                    false
 apache::log_level:                  warn
+apache::manage_firewall:            true
 apache::network_connect:            false
 apache::network_connect_db:         false
 apache::network_relay:              false
 apache::use_nfs:                    false
-apache::manage_firewall:            true
 
 apache::mod_auth_gssapi::keytab_content:    null
 apache::mod_auth_gssapi::keytab_source:     null

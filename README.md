@@ -62,6 +62,9 @@ This class manages the primary configuration, SELinux settings and firewall.  Th
 ##### `anon_write`
 Should SELinux allow httpd to modify public files used for public file transfer services?  Either `true` or `false` (default).
 
+##### `execmem`
+Should SELinux allow httpd scripts and modules execmem/execstack?  Either `true` or `false` (default).
+
 ##### `log_level`
 Limits the level of messages logged to the `error_log`.  Valid values are: `debug`, `info`, `notice`, `warn`, `error`, `crit`, `alert`, `emerg`.  The default is `warn`.
 
