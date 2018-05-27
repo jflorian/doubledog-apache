@@ -149,7 +149,7 @@ Instance is to be `running` (default) or `stopped`.  Alternatively, a Boolean va
 
 #### apache::misc\_file defined type
 
-This defined type manages a miscellaneous file for the web server.
+This defined type manages a miscellaneous file for the web server.  These will land in `/etc/httpd/${filename}`.
 
 ##### `namevar` (required)
 An arbitrary identifier for the file instance unless the *filename* parameter is not set in which case this must provide the value normally set with the *filename* parameter.
@@ -178,7 +178,7 @@ URI of the file content.  If neither *content* nor *source* is given, the conten
 
 #### apache::module\_config defined type
 
-This defined type manages a module configuration file for the web server.
+This defined type manages a module configuration file for the web server.  These will land in `/etc/httpd/conf.modules.d/${filename}.conf`.
 
 ##### `namevar` (required)
 An arbitrary identifier for the file instance unless the *filename* parameter is not set in which case this must provide the value normally set with the *filename* parameter.
@@ -207,7 +207,7 @@ URI of the file content.  If neither *content* nor *source* is given, the conten
 
 #### apache::site\_config defined type
 
-This defined type manages a site-specific configuration file for the web server.
+This defined type manages a site-specific configuration file for the web server.  These will land in `/etc/httpd/conf.d/${filename}.conf`.
 
 ##### `namevar` (required)
 An arbitrary identifier for the file instance unless the *filename* parameter is not set in which case this must provide the value normally set with the *filename* parameter.
