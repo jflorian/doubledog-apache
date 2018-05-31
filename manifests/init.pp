@@ -43,7 +43,7 @@ class apache (
             subscribe => Class['::apache::package'],
             ;
         '/etc/httpd/conf/httpd.conf':
-            content  => template("apache/httpd.conf.${::operatingsystem}.${::operatingsystemmajrelease}"),
+            content  => template('apache/httpd.conf.erb'),
             ;
     }
 
