@@ -71,7 +71,7 @@ Should SELinux allow httpd to modify public files used for public file transfer 
 Should SELinux allow httpd scripts and modules execmem/execstack?  Either `true` or `false` (default).
 
 ##### `log_level`
-Limits the level of messages logged to the `error_log` file.  Valid values are: `'debug'`, `'info'`, `'notice'`, `'warn'`, `'error'`, `'crit'`, `'alert'`, `'emerg'`.  The default is `'warn'`.
+Limits the level of messages logged to the `error_log` file.  Valid values are regulated by the [Apache::Log\_level](#apachelog_level-data-type).  The default is `'warn'`.
 
 ##### `manage_firewall`
 If `true`, open the HTTP port on the firewall.  Otherwise the firewall is left unaffected.  Defaults to `true`.

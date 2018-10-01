@@ -15,16 +15,15 @@
 
 
 class apache (
-        Boolean             $anon_write,
-        Boolean             $execmem,
-        Optional[Enum['emerg', 'alert', 'crit', 'error', 'warn', 'notice', 'info', 'debug']]
-                            $log_level,
-        Boolean             $manage_firewall,
-        Boolean             $network_connect,
-        Boolean             $network_connect_db,
-        Boolean             $network_relay,
-        Boolean             $send_mail,
-        Boolean             $use_nfs,
+        Boolean                     $anon_write,
+        Boolean                     $execmem,
+        Optional[Apache::Log_level] $log_level,
+        Boolean                     $manage_firewall,
+        Boolean                     $network_connect,
+        Boolean                     $network_connect_db,
+        Boolean                     $network_relay,
+        Boolean                     $send_mail,
+        Boolean                     $use_nfs,
     ) {
 
     include '::apache::package'
