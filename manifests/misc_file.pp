@@ -15,7 +15,7 @@
 
 
 define apache::misc_file (
-        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
+        Ddolib::File::Ensure    $ensure='present',
         Optional[String[1]]     $content=undef,
         String[1]               $filename=$title,
         String[1]               $group='apache',

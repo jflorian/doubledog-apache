@@ -15,7 +15,7 @@
 
 
 class apache::service (
-        Variant[Boolean, Enum['running', 'stopped']] $ensure,
+        Ddolib::Service::Ensure $ensure,
         String[1]               $daemon,
         Boolean                 $enable,
     ) {
