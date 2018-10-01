@@ -66,7 +66,7 @@ Should SELinux allow httpd to modify public files used for public file transfer 
 Should SELinux allow httpd scripts and modules execmem/execstack?  Either `true` or `false` (default).
 
 ##### `log_level`
-Limits the level of messages logged to the `error_log`.  Valid values are: `debug`, `info`, `notice`, `warn`, `error`, `crit`, `alert`, `emerg`.  The default is `warn`.
+Limits the level of messages logged to the `error_log` file.  Valid values are: `'debug'`, `'info'`, `'notice'`, `'warn'`, `'error'`, `'crit'`, `'alert'`, `'emerg'`.  The default is `'warn'`.
 
 ##### `manage_firewall`
 If `true`, open the HTTP port on the firewall.  Otherwise the firewall is left unaffected.  Defaults to `true`.
@@ -142,7 +142,7 @@ The service name of the httpd daemon.  The default should be correct for support
 Instance is to be started at boot.  Either `true` (default) or `false`.
 
 ##### `ensure`
-Instance is to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
+Instance is to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
 
 
 ### Defined types
@@ -158,19 +158,19 @@ An arbitrary identifier for the file instance unless the *filename* parameter is
 Literal content for the file.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
 
 ##### `ensure`
-Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean value may also be used with `true` equivalent to `present` and `false` equivalent to `absent`.
+Instance is to be `'present'` (default) or `'absent'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'present'` and `false` equivalent to `'absent'`.
 
 ##### `filename`
 Name to be given to the file, without any path details.  This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.
 
 ##### `group`
-File group account.  Defaults to 'apache' which is appropriate for most files.
+File group account.  Defaults to `'apache'` which is appropriate for most files.
 
 ##### `mode`
-File access mode.  Defaults to '0640' which is appropriate for most files.
+File access mode.  Defaults to `'0640'` which is appropriate for most files.
 
 ##### `owner`
-File owner account.  Defaults to 'root' which is appropriate for most files.
+File owner account.  Defaults to `'root'` which is appropriate for most files.
 
 ##### `source`
 URI of the file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
@@ -187,19 +187,19 @@ An arbitrary identifier for the file instance unless the *filename* parameter is
 Literal content for the file.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
 
 ##### `ensure`
-Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean value may also be used with `true` equivalent to `present` and `false` equivalent to `absent`.
+Instance is to be `'present'` (default) or `'absent'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'present'` and `false` equivalent to `'absent'`.
 
 ##### `filename`
 Name to be given to the file, without any path details nor a `.conf` suffix.  This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.
 
 ##### `group`
-File group account.  Defaults to 'apache' which is appropriate for most files.
+File group account.  Defaults to `'apache'` which is appropriate for most files.
 
 ##### `mode`
-File access mode.  Defaults to '0640' which is appropriate for most files.
+File access mode.  Defaults to `'0640'` which is appropriate for most files.
 
 ##### `owner`
-File owner account.  Defaults to 'root' which is appropriate for most files.
+File owner account.  Defaults to `'root'` which is appropriate for most files.
 
 ##### `source`
 URI of the file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
@@ -216,19 +216,19 @@ An arbitrary identifier for the file instance unless the *filename* parameter is
 Literal content for the file.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
 
 ##### `ensure`
-Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean value may also be used with `true` equivalent to `present` and `false` equivalent to `absent`.
+Instance is to be `'present'` (default) or `'absent'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'present'` and `false` equivalent to `'absent'`.
 
 ##### `filename`
 Name to be given to the file, without any path details nor a `.conf` suffix.  This may be used in place of *namevar* if it's beneficial to give *namevar* an arbitrary value.
 
 ##### `group`
-File group account.  Defaults to 'apache' which is appropriate for most files.
+File group account.  Defaults to `'apache'` which is appropriate for most files.
 
 ##### `mode`
-File access mode.  Defaults to '0640' which is appropriate for most files.
+File access mode.  Defaults to `'0640'` which is appropriate for most files.
 
 ##### `owner`
-File owner account.  Defaults to 'root' which is appropriate for most files.
+File owner account.  Defaults to `'root'` which is appropriate for most files.
 
 ##### `source`
 URI of the file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
