@@ -61,25 +61,25 @@ class apache (
             persistent => true,
             ;
         'httpd_anon_write':
-            value => $anon_write,
+            ensure => $anon_write,
             ;
         'httpd_can_network_connect':
-            value => $network_connect,
+            ensure => $network_connect,
             ;
         'httpd_can_network_connect_db':
-            value => $network_connect_db,
+            ensure => $network_connect_db,
             ;
         'httpd_can_network_relay':
-            value => $network_relay,
+            ensure => $network_relay,
             ;
         'httpd_can_sendmail':
-            value => $send_mail,
+            ensure => $send_mail,
             ;
         'httpd_execmem':
-            value => $execmem,
+            ensure => $execmem,
             ;
         'httpd_use_nfs':
-            value => $use_nfs,
+            ensure => $use_nfs,
             ;
     }
 
