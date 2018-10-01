@@ -17,6 +17,7 @@
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
     * [Classes](#classes)
     * [Defined types](#defined-types)
+    * [Data types](#data-types)
 1. [Limitations - OS compatibility, etc.](#limitations)
 1. [Development - Guide for contributing to the module](#development)
 
@@ -51,6 +52,10 @@ This module lets you manage the Apache httpd web server.
 * [apache::misc\_file](#apachemisc_file-defined-type)
 * [apache::module\_config](#apachemodule_config-defined-type)
 * [apache::site\_config](#apachesite_config-defined-type)
+
+**Data types:**
+
+* [Apache::Log\_level](#apachelog_level-data-type)
 
 
 ### Classes
@@ -232,6 +237,13 @@ File owner account.  Defaults to `'root'` which is appropriate for most files.
 
 ##### `source`
 URI of the file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+
+
+### Data types
+
+#### `Apache::Log_level` data type
+
+Matches acceptable values for Apache's various log levels.  Valid values are: `'debug'`, `'info'`, `'notice'`, `'warn'`, `'error'`, `'crit'`, `'alert'`, `'emerg'`.
 
 
 ## Limitations
