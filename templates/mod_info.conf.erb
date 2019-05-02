@@ -1,0 +1,12 @@
+<%#
+This file is part of the doubledog-apache Puppet module.
+Copyright 2019 John Florian
+SPDX-License-Identifier: GPL-3.0-or-later
+-%>
+<Location <%= @location %>>
+  SetHandler server-info
+  <RequireAny>
+    Require host <%= @allow_from_host.join(' ') %>
+    Require ip <%= @allow_from_ip.join(' ') %>
+  </RequireAny>
+</Location>

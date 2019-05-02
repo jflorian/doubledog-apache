@@ -21,6 +21,7 @@ All notable changes to this project (since v3.0.0) will be documented in this fi
 
 ## [3.2.0] WIP
 ### Added
+- `apache::mod_info` class
 - `apache::mod_status` class
 ### Changed
 ### Deprecated
