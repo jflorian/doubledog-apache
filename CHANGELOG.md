@@ -25,6 +25,7 @@ All notable changes to this project (since v3.0.0) will be documented in this fi
 ### Deprecated
 ### Removed
 - Fedora 26 support
+- Fedora 27 support
 ### Fixed
 ### Security
 
