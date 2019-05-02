@@ -22,6 +22,7 @@ All notable changes to this project (since v3.0.0) will be documented in this fi
 ## [3.1.0] WIP
 ### Added
 - Fedora 29 support
+- Fedora 30 support
 ### Changed
 ### Deprecated
 ### Removed
