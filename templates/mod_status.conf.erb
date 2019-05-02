@@ -1,0 +1,6 @@
+ExtendedStatus on
+
+<Location <%= @location %>>
+  SetHandler server-status
+  Require ip <%= @allow_from.join(' ') %>
+</Location>
