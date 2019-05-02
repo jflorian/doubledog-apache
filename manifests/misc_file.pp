@@ -10,7 +10,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-apache Puppet module.
-# Copyright 2014-2018 John Florian
+# Copyright 2014-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -34,9 +34,9 @@ define apache::misc_file (
         seltype => 'httpd_config_t',
         content => $content,
         source  => $source,
-        require => Class['::apache::package'],
-        before  => Class['::apache::service'],
-        notify  => Class['::apache::service'],
+        require => Class['apache::package'],
+        before  => Class['apache::service'],
+        notify  => Class['apache::service'],
     }
 
 }

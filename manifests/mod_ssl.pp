@@ -10,7 +10,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-apache Puppet module.
-# Copyright 2014-2018 John Florian
+# Copyright 2014-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -21,7 +21,7 @@ class apache::mod_ssl (
 
     package { $packages:
         ensure => installed,
-        notify => Class['::apache::service'],
+        notify => Class['apache::service'],
     }
 
     if $manage_firewall {

@@ -10,7 +10,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-apache Puppet module.
-# Copyright 2010-2018 John Florian
+# Copyright 2010-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -26,8 +26,8 @@ class apache (
         Boolean                     $use_nfs,
     ) {
 
-    include '::apache::package'
-    include '::apache::service'
+    include 'apache::package'
+    include 'apache::service'
 
     file {
         default:
@@ -37,9 +37,9 @@ class apache (
             seluser   => 'system_u',
             selrole   => 'object_r',
             seltype   => 'httpd_config_t',
-            before    => Class['::apache::service'],
-            notify    => Class['::apache::service'],
-            subscribe => Class['::apache::package'],
+            before    => Class['apache::service'],
+            notify    => Class['apache::service'],
+            subscribe => Class['apache::package'],
             ;
         '/etc/httpd/conf/httpd.conf':
             content  => template('apache/httpd.conf.erb'),
@@ -57,7 +57,7 @@ class apache (
 
     selinux::boolean {
         default:
-            before     => Class['::apache::service'],
+            before     => Class['apache::service'],
             persistent => true,
             ;
         'httpd_anon_write':
