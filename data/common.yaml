@@ -25,6 +25,11 @@ apache::mod_ssl::manage_firewall:   true
 apache::mod_ssl::packages:
     - mod_ssl
 
+apache::mod_status::location: '/server-status'
+apache::mod_status::allow_from:
+    - '127.0.0.1'
+    - '::1'
+
 apache::mod_wsgi::packages:
     - mod_wsgi
 

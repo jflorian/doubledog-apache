@@ -43,6 +43,7 @@ This module lets you manage the Apache httpd web server.
 * [apache::mod\_auth\_gssapi](#apachemod_auth_gssapi-class)
 * [apache::mod\_passenger](#apachemod_passenger-class)
 * [apache::mod\_ssl](#apachemod_ssl-class)
+* [apache::mod\_status](#apachemod_status-class)
 * [apache::mod\_wsgi](#apachemod_wsgi-class)
 * [apache::package](#apachepackage-class)
 * [apache::service](#apacheservice-class)
@@ -118,6 +119,19 @@ This class manages the Apache web server to provide HTTPS support.
 
 ##### `manage_firewall`
 If `true`, open the HTTPS port on the firewall.  Otherwise the firewall is left unaffected.  Defaults to `true`.
+
+
+#### apache::mod\_status class
+
+This class manages the Apache status module which provides reports of server activity.  By default access will
+only be allowed on the local loopback interface.
+
+##### `location`
+This parameter controls the location used to access the apache status page.  The default value will be set to `'/server-status'`.
+
+##### `allow_from`
+An array of IPs or IP ranges in CIDR format which defines the hosts allowed to access the server status page.
+The default value will be set to `['127.0.0.1', '::1']`.
 
 
 #### apache::mod\_wsgi class
