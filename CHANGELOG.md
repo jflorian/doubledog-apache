@@ -26,6 +26,7 @@ All notable changes to this project (since v3.0.0) will be documented in this fi
 ### Deprecated
 ### Removed
 ### Fixed
+- errors occur when SELinux is disabled
 ### Security
 
 ## [3.1.0] 2019-05-02

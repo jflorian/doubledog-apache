@@ -55,32 +55,34 @@ class apache (
         }
     }
 
-    selinux::boolean {
-        default:
-            before     => Class['apache::service'],
-            persistent => true,
-            ;
-        'httpd_anon_write':
-            ensure => $anon_write,
-            ;
-        'httpd_can_network_connect':
-            ensure => $network_connect,
-            ;
-        'httpd_can_network_connect_db':
-            ensure => $network_connect_db,
-            ;
-        'httpd_can_network_relay':
-            ensure => $network_relay,
-            ;
-        'httpd_can_sendmail':
-            ensure => $send_mail,
-            ;
-        'httpd_execmem':
-            ensure => $execmem,
-            ;
-        'httpd_use_nfs':
-            ensure => $use_nfs,
-            ;
+    if $facts['selinux'] {
+        selinux::boolean {
+            default:
+                before     => Class['apache::service'],
+                persistent => true,
+                ;
+            'httpd_anon_write':
+                ensure => $anon_write,
+                ;
+            'httpd_can_network_connect':
+                ensure => $network_connect,
+                ;
+            'httpd_can_network_connect_db':
+                ensure => $network_connect_db,
+                ;
+            'httpd_can_network_relay':
+                ensure => $network_relay,
+                ;
+            'httpd_can_sendmail':
+                ensure => $send_mail,
+                ;
+            'httpd_execmem':
+                ensure => $execmem,
+                ;
+            'httpd_use_nfs':
+                ensure => $use_nfs,
+                ;
+        }
     }
 
 }
