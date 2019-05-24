@@ -55,7 +55,7 @@ class apache (
         }
     }
 
-    if $facts['selinux'] {
+    if $facts['selinux'] == true {
         selinux::boolean {
             default:
                 before     => Class['apache::service'],
