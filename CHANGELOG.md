@@ -19,6 +19,13 @@ Template
 
 All notable changes to this project (since v3.0.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [3.2.0] 2019-05-27
+### Added
+- `apache::mod_info` class
+- `apache::mod_status` class
+### Fixed
+- errors occur when SELinux is disabled
+
 ## [3.1.0] 2019-05-02
 ### Added
 - Fedora 29 support

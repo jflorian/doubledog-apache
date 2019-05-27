@@ -41,8 +41,10 @@ This module lets you manage the Apache httpd web server.
 
 * [apache](#apache-class)
 * [apache::mod\_auth\_gssapi](#apachemod_auth_gssapi-class)
+* [apache::mod\_info](#apachemod_info-class)
 * [apache::mod\_passenger](#apachemod_passenger-class)
 * [apache::mod\_ssl](#apachemod_ssl-class)
+* [apache::mod\_status](#apachemod_status-class)
 * [apache::mod\_wsgi](#apachemod_wsgi-class)
 * [apache::package](#apachepackage-class)
 * [apache::service](#apacheservice-class)
@@ -104,6 +106,20 @@ URI of the Kerberos keytab file content.  If neither *content* nor *source* is g
 An array of package names needed for httpd authorization via Kerberos using only GSSAPI calls.  The default should be correct for supported platforms.
 
 
+#### apache::mod\_info class
+
+This class manages the [Apache info module](https://httpd.apache.org/docs/2.4/mod/mod_info.html) which provides a comprehensive overview of the server configuration.  Access will only be allowed for any successful match of `allow_from_host` or `allow_from_ip` -- the client need not match both.
+
+##### `location`
+This parameter controls the location used to access the server info page.  Defaults to `'/server-info'`.
+
+##### `allow_from_host`
+An array of hostnames which to be allowed access to the server info page.  Defaults to `[]`.
+
+##### `allow_from_ip`
+An array of IPs or IP ranges in CIDR format to be allowed access to the server info page.  Defaults to `['127.0.0.1', '::1']`.
+
+
 #### apache::mod\_passenger class
 
 This class manages the Apache web server to provide Phusion Passenger support.
@@ -118,6 +134,20 @@ This class manages the Apache web server to provide HTTPS support.
 
 ##### `manage_firewall`
 If `true`, open the HTTPS port on the firewall.  Otherwise the firewall is left unaffected.  Defaults to `true`.
+
+
+#### apache::mod\_status class
+
+This class manages the [Apache status module](https://httpd.apache.org/docs/2.4/mod/mod_status.html) which provides information on server activity and performance.  Access will only be allowed for any successful match of `allow_from_host` or `allow_from_ip` -- the client need not match both.
+
+##### `location`
+This parameter controls the location used to access the server status page.  Defaults to `'/server-status'`.
+
+##### `allow_from_host`
+An array of hostnames which to be allowed access to the server status page.  Defaults to `[]`.
+
+##### `allow_from_ip`
+An array of IPs or IP ranges in CIDR format to be allowed access to the server status page.  Defaults to `['127.0.0.1', '::1']`.
 
 
 #### apache::mod\_wsgi class
