@@ -1,16 +1,7 @@
-# modules/apache/manifests/mod_status.pp
 #
 # == Class: apache::mod_status
 #
 # Configures the Apache server status page.
-#
-# === Parameters
-#
-#  [*location*]
-#  This parameter controls the location used to access the apache status page.  Default value is set to /server-status.
-#
-#  [*allow_from*]
-#  This parameter controls what IPs or IP ranges are allowed to access the apache status page.
 #
 # === Authors
 #
