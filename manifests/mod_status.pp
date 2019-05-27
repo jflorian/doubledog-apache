@@ -14,8 +14,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 class apache::mod_status (
-    String[1] $location,
-    Array[String] $allow_from,
+    Array[String]   $allow_from_host,
+    Array[String]   $allow_from_ip,
+    String[1]       $location,
     ) {
 
     include 'apache'

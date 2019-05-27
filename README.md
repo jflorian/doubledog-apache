@@ -123,15 +123,16 @@ If `true`, open the HTTPS port on the firewall.  Otherwise the firewall is left 
 
 #### apache::mod\_status class
 
-This class manages the Apache status module which provides reports of server activity.  By default access will
-only be allowed on the local loopback interface.
+This class manages the Apache status module which provides reports of server activity.  Access will only be allowed for any successful match of `allow_from_host` or `allow_from_ip` -- the client need not match both.
 
 ##### `location`
-This parameter controls the location used to access the apache status page.  The default value will be set to `'/server-status'`.
+This parameter controls the location used to access the server status page.  The default value will be set to `'/server-status'`.
 
-##### `allow_from`
-An array of IPs or IP ranges in CIDR format which defines the hosts allowed to access the server status page.
-The default value will be set to `['127.0.0.1', '::1']`.
+##### `allow_from_host`
+An array of hostnames which to be allowed access to the server status page.  Defaults to `[]`.
+
+##### `allow_from_ip`
+An array of IPs or IP ranges in CIDR format to be allowed access to the server status page.  Defaults to `['127.0.0.1', '::1']`.
 
 
 #### apache::mod\_wsgi class

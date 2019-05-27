@@ -7,5 +7,8 @@ ExtendedStatus on
 
 <Location <%= @location %>>
   SetHandler server-status
-  Require ip <%= @allow_from.join(' ') %>
+  <RequireAny>
+    Require host <%= @allow_from_host.join(' ') %>
+    Require ip <%= @allow_from_ip.join(' ') %>
+  </RequireAny>
 </Location>
