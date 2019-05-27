@@ -123,10 +123,10 @@ If `true`, open the HTTPS port on the firewall.  Otherwise the firewall is left 
 
 #### apache::mod\_status class
 
-This class manages the Apache status module which provides reports of server activity.  Access will only be allowed for any successful match of `allow_from_host` or `allow_from_ip` -- the client need not match both.
+This class manages the [Apache status module](https://httpd.apache.org/docs/2.4/mod/mod_status.html) which provides information on server activity and performance.  Access will only be allowed for any successful match of `allow_from_host` or `allow_from_ip` -- the client need not match both.
 
 ##### `location`
-This parameter controls the location used to access the server status page.  The default value will be set to `'/server-status'`.
+This parameter controls the location used to access the server status page.  Defaults to `'/server-status'`.
 
 ##### `allow_from_host`
 An array of hostnames which to be allowed access to the server status page.  Defaults to `[]`.
