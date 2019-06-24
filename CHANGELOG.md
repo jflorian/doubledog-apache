@@ -24,6 +24,7 @@ All notable changes to this project (since v3.0.0) will be documented in this fi
 - initial FreeBSD support
 ### Changed
 - `apache::mod_auth_gssapi` now makes keytab management optional
+- dependency on `puppetlabs/firewall` now allows version 3
 ### Deprecated
 ### Removed
 ### Fixed
