@@ -1,6 +1,6 @@
 <!--
 This file is part of the doubledog-apache Puppet module.
-Copyright 2018-2019 John Florian
+Copyright 2018-2020 John Florian
 SPDX-License-Identifier: GPL-3.0-or-later
 
 Template
@@ -21,11 +21,13 @@ All notable changes to this project (since v3.0.0) will be documented in this fi
 
 ## [3.3.0] WIP
 ### Added
+- Fedora 31 support
 ### Changed
 - dependency on `puppetlabs/firewall` now allows version 2
 - dependency on `puppet/selinux` now allows version 3
 ### Deprecated
 ### Removed
+- Fedora 28 support
 ### Fixed
 - SELinux failures with older Puppet agents
 ### Security
