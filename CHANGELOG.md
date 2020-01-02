@@ -19,19 +19,17 @@ Template
 
 All notable changes to this project (since v3.0.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [3.3.0] WIP
+## [3.3.0] 2020-01-02
 ### Added
 - Fedora 31 support
 - CentOS 8 support
 ### Changed
 - dependency on `puppetlabs/firewall` now allows version 2
 - dependency on `puppet/selinux` now allows version 3
-### Deprecated
 ### Removed
 - Fedora 28 support
 ### Fixed
 - SELinux failures with older Puppet agents
-### Security
 
 ## [3.2.0] 2019-05-27
 ### Added
