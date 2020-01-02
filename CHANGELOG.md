@@ -22,6 +22,7 @@ All notable changes to this project (since v3.0.0) will be documented in this fi
 ## [3.3.0] WIP
 ### Added
 - Fedora 31 support
+- CentOS 8 support
 ### Changed
 - dependency on `puppetlabs/firewall` now allows version 2
 - dependency on `puppet/selinux` now allows version 3
