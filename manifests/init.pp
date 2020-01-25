@@ -32,7 +32,10 @@ class apache (
     file {
         default:
             owner     => 'root',
-            group     => 'root',
+            group     => $facts['operatingsystem'] ? {
+                'FreeBSD' => 'wheel',
+                default   => 'root',
+            },
             mode      => '0640',
             seluser   => 'system_u',
             selrole   => 'object_r',
@@ -41,12 +44,20 @@ class apache (
             notify    => Class['apache::service'],
             subscribe => Class['apache::package'],
             ;
-        '/etc/httpd/conf/httpd.conf':
-            content  => template('apache/httpd.conf.erb'),
+
+        'httpd.conf':
+            path => $facts['operatingsystem'] ? {
+                'FreeBSD' => '/usr/local/etc/apache24/httpd.conf',
+                default   => '/etc/httpd/conf/httpd.conf',
+            },
+            content => $facts['operatingsystem'] ? {
+                'FreeBSD' => template('apache/bsd/httpd.conf.erb'),
+                default   => template('apache/httpd.conf.erb'),
+            }
             ;
     }
 
-    if $manage_firewall {
+    if $manage_firewall and $facts['kernel'] == 'Linux' {
         firewall { '500 accept HTTP packets':
             dport  => '80',
             proto  => 'tcp',
