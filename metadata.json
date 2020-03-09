@@ -22,6 +22,12 @@
                 "30",
                 "31"
             ]
+        },
+        {
+            "operatingsystem": "FreeBSD",
+            "operatingsystemmajrelease": [
+                "12"
+            ]
         }
     ],
     "dependencies": [

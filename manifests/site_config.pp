@@ -21,10 +21,11 @@ define apache::site_config (
         String[1]               $group='apache',
         Pattern[/[0-7]{4}/]     $mode='0640',
         String[1]               $owner='root',
+        String[1]               $include_dir='/etc/httpd/conf.d',
         Optional[String[1]]     $source=undef,
     ) {
 
-    file { "/etc/httpd/conf.d/${filename}.conf":
+    file { "${include_dir}/${filename}.conf":
         ensure  => $ensure,
         owner   => $owner,
         group   => $group,

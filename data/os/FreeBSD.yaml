@@ -1,0 +1,5 @@
+---
+apache::package::names:
+    - apache24
+
+apache::service::daemon: apache24
