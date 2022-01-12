@@ -1,6 +1,6 @@
 <!--
 This file is part of the doubledog-apache Puppet module.
-Copyright 2018-2020 John Florian
+Copyright 2018-2022 John Florian
 SPDX-License-Identifier: GPL-3.0-or-later
 
 Template
@@ -23,6 +23,7 @@ All notable changes to this project (since v3.0.0) will be documented in this fi
 ### Added
 - initial FreeBSD support
 ### Changed
+- `apache::mod_auth_gssapi` now makes keytab management optional
 ### Deprecated
 ### Removed
 ### Fixed
