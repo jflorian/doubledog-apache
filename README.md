@@ -1,6 +1,6 @@
 <!--
 This file is part of the doubledog-apache Puppet module.
-Copyright 2018-2019 John Florian <jflorian@doubledog.org>
+Copyright 2018-2022 John Florian <jflorian@doubledog.org>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
@@ -96,8 +96,8 @@ Should SELinux allow serving content reached via NFS?  Either `true` or `false` 
 This class manages the Apache web server to provide authorization via Kerberos using
 only GSSAPI calls.
 
-##### `keytab_content`
-Literal content for the Kerberos keytab file.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+##### `keytab_content`, `keytab_source`
+Literal content or URI for the Kerberos keytab file content.  If neither *content* nor *source* is given, the file will be left unmanaged.  This may be desirable when using gssproxy that has a keytab elsewhere.
 
 ##### `keytab_source`
 URI of the Kerberos keytab file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.

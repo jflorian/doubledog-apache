@@ -11,7 +11,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-apache Puppet module.
-# Copyright 2018-2019 John Florian
+# Copyright 2018-2022 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -26,9 +26,11 @@ class apache::mod_auth_gssapi (
         notify => Class['apache::service'],
     }
 
-    apache::misc_file { 'conf/http.keytab':
-        content => $keytab_content,
-        source  => $keytab_source,
+    if $keytab_content or $keytab_source {
+        apache::misc_file { 'conf/http.keytab':
+            content => $keytab_content,
+            source  => $keytab_source,
+        }
     }
 
 }

@@ -1,6 +1,6 @@
 {
     "name": "doubledog-apache",
-    "version": "3.3.0",
+    "version": "3.4.0",
     "author": "John Florian",
     "summary": "A module to manage the Apache web server",
     "license": "GPL-3.0",
@@ -18,9 +18,15 @@
         {
             "operatingsystem": "Fedora",
             "operatingsystemrelease": [
-                "29",
-                "30",
-                "31"
+                "33",
+                "34",
+                "35"
+            ]
+        },
+        {
+            "operatingsystem": "FreeBSD",
+            "operatingsystemmajrelease": [
+                "12"
             ]
         }
     ],
@@ -35,7 +41,7 @@
         },
         {
             "name": "puppetlabs/firewall",
-            "version_requirement": ">= 1.8.0 < 3.0.0"
+            "version_requirement": ">= 1.8.0 < 4.0.0"
         }
     ]
 }
