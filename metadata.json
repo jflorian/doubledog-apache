@@ -1,6 +1,6 @@
 {
     "name": "doubledog-apache",
-    "version": "3.3.0",
+    "version": "3.4.0",
     "author": "John Florian",
     "summary": "A module to manage the Apache web server",
     "license": "GPL-3.0",
