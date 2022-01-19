@@ -19,18 +19,15 @@ Template
 
 All notable changes to this project (since v3.0.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [3.4.0] WIP
+## [3.4.0] 2022-01-19
 ### Added
 - initial FreeBSD support
 - Fedora 33-35 support
 ### Changed
 - `apache::mod_auth_gssapi` now makes keytab management optional
 - dependency on `puppetlabs/firewall` now allows version 3
-### Deprecated
 ### Removed
 - Fedora 29-32 support
-### Fixed
-### Security
 
 ## [3.3.0] 2020-01-02
 ### Added
